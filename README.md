@@ -6,7 +6,7 @@
 
 Amazon Software Engineer Intern(Summer 2017).
 
-- AWS 
+- AWS Infrastracture Team
 
 ### Splunk
 
@@ -19,7 +19,7 @@ Software Engineer in Test Intern
 
 ### Swift Shell
 
-Developed [open source swift shell](https://github.com/hooman96/SwiftShell) (2014–2014, 6 months).
+Developed [open source swift shell](https://github.com/hooman96/SwiftShell) (2016, 6 months).
 
 - Worked with Justin Jia to develop UI, backend and the idea
 
@@ -36,10 +36,3 @@ University of California, Davis — Computer Science Major, Technology Managemen
 - Databases: PostgreSQL, MySQL
 - Functional/Logical: Prolog, LISP, Haskell
 - Web: HTML, CSS, JavaScript
-
-### Tools
-- Unix, Git, Xcode, Atom, LaTeX, Bash
-
-### Soft
-- public speaking
-- management and leadership
