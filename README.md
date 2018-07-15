@@ -2,9 +2,15 @@
 
 ## Experience
 
+### Moody's
+
+Moody's Software Engineer Intern (Summer 2018)
+
+- C# and node js back-end, react front-end
+
 ### Amazon
 
-Amazon Software Engineer Intern(Summer 2017).
+Amazon Software Engineer Intern (Summer 2017)
 
 - AWS Infrastracture Team
 
