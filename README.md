@@ -31,7 +31,7 @@ Developed [open source swift shell](https://github.com/hooman96/SwiftShell) (201
 
 ## Education
 
-University of California, Davis — Computer Science Major, Technology Management Minor (Sept 2014– June 2018)
+University of California, Davis — Computer Science Major, Technology Management Minor (Sept 2014 – Sept 2018)
 
 ## Skills
 
