@@ -4,7 +4,7 @@
 
 ### Moody's
 
-Moody's Software Engineer Intern (Summer 2018)
+Moody's Data Science Intern (Summer 2018)
 
 - C# and node.js back-end, react front-end
 
