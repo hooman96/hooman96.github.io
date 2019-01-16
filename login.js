@@ -18,5 +18,3 @@ FB.login(function(response) {
     // The person is not logged into this app or we are unable to tell. 
   }
 }, {scope: 'public_profile,email'});
-
-//
