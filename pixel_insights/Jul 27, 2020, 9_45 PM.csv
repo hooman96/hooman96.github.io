@@ -1,0 +1,5 @@
+﻿unix_time_start,event,browser_processed_count,browser_discarded_count,browser_total_count,server_processed_count,server_discarded_count,server_total_count
+1595620800,PageView,0,13,13,0,0,0
+1595624400,PageView,0,14,14,0,0,0
+1595638800,PageView,1,0,1,0,0,0
+1595815200,PageView,1,0,1,0,0,0
