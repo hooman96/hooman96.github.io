@@ -16,8 +16,6 @@ Software Engineer (2019)
 
 Moody's Analytics Data Science Intern (Summer 2018)
 
-- C# and node.js back-end, react front-end
-
 ### Amazon
 
 Amazon Software Engineer Intern (Summer 2017)
@@ -27,8 +25,6 @@ Amazon Software Engineer Intern (Summer 2017)
 ### Splunk
 
 Software Engineer in Test Intern (Summer 2016)
-
-- python testing frameworks
 
 ## Education
 
