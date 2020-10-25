@@ -2,11 +2,19 @@
 
 ## Experience
 
+### TikTok
+
+Software Engineer (Present)
+
+### Magic Leap
+
+Software Engineer (2019)
+
+## Internship
+
 ### Moody's
 
-Moody's Software Engineer Intern (Summer 2018)
-
-- C# and node.js back-end, react front-end
+Moody's Analytics Data Science Intern (Summer 2018)
 
 ### Amazon
 
@@ -16,18 +24,7 @@ Amazon Software Engineer Intern (Summer 2017)
 
 ### Splunk
 
-Software Engineer in Test Intern 
-
-- python testing frameworks
-
-
-## Project
-
-### Swift Shell
-
-Developed [open source swift shell](https://github.com/hooman96/SwiftShell) (2016, 6 months).
-
-- Worked with Justin Jia to develop UI, backend and the idea
+Software Engineer in Test Intern (Summer 2016)
 
 ## Education
 
