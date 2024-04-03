@@ -1,6 +1,6 @@
 ## Hooman Mohammadi
 
-[https://linkedin.com/in/mhoammadi](https://linkedin.com/in/mhooman) | [hmohammadi@ucdavis.edu](mailto:hmohammadi@ucdavis.edu)  
+[https://linkedin.com/in/hooistheman](https://linkedin.com/in/hooistheman) | [hmohammadi@ucdavis.edu](mailto:hmohammadi@ucdavis.edu)  
 [https://hooman96.github.io](https://hooman96.github.io) | (U.S. Citizen) 650-933-3056
 
 ### Employment
