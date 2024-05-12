@@ -1,72 +1,134 @@
-## Hooman Mohammadi
+**Hooman (Adam) Mohammadi**
+==========================
 
-[https://linkedin.com/in/hooistheman](https://linkedin.com/in/hooistheman) | [hmohammadi@ucdavis.edu](mailto:hmohammadi@ucdavis.edu)  
-[https://hooman96.github.io](https://hooman96.github.io) | (U.S. Citizen) 650-933-3056
+**Contact Information**
 
-### Employment
+* Email: [adam.m.hooman@gmail.com](mailto:adam.m.hooman@gmail.com)
+* LinkedIn: [https://linkedin.com/in/hooistheman](https://linkedin.com/in/hooistheman)
+* Website: [http://hooistheman.xyz](http://hooistheman.xyz)
+* GitHub: [https://github.com/hooman96](https://github.com/hooman96)
 
-#### Momento AI | Emeryville, CA
-**Technical Founder** | Oct 2023 - Present
+**Summary**
+----------
 
-- Built hybrid multi-cloud mapping and migration platform using Docker/Kubernetes & Python CLI tools
+Highly motivated and experienced software engineer with a strong background in machine learning, artificial intelligence, and cloud computing. Proficient in a range of programming languages, including Python, Java, and C++. Strong understanding of cloud platforms, including AWS and GCP.
 
-#### Amazon Web Services (AWS) | San Francisco, CA  
-**Software Development Engineer, L5** | Aug 2022 - Sept 2023
+**Work Experience**
+-------------------
 
-- Led the design of fraudulent detection within in-house service processing as part of the AI initiatives
-- Achieved 75% latency optimization while enhancing payment transactions pagination for global customers
+### Momento AI (2023-Present)
 
-#### Coinbase | Fully Remote, U.S.
-**Software Protocol Engineer** | Nov 2021 - May 2022  
+* Technical Founder
+* Built a hybrid multi-cloud mapping and migration platform using Docker/Kubernetes and Terraform CLI tools with different SDKs in Python, Go, and Java.
 
-- Reduced the cost of customer nodes (Participation, Query & Transact) by half for on-chain validators
-- Researched blockchain infrastructure for Zero Knowledge (Zcash), Bitcoin (forks) & Tendermint protocols
+### Amazon Web Services (2022-2023)
 
-#### Influencer Gift | Miami, FL
-**Founder & CEO** | July 2021 - Nov 2021
+* Software Development Engineer, L5
+* Contributed to the design of fraudulent detection within in-house service processing as part of the AI initiatives.
+* Achieved 75% latency optimization while enhancing payment transactions pagination for global customers.
 
-- Initiated ERC-20 token based [gift suggestions](https://newmomento-rust.vercel.app) with personalized ML algorithms to predict user behaviors
+### Coinbase (2021-2022)
 
-#### TikTok | Mountain View, CA
-**Software Engineer R&D** | April 2020 - June 2021
+* Software Protocol Engineer
+* Reduced the cost of customer nodes (Participation, Query & Transact) by half for on-chain validators.
+* Researched blockchain infrastructure for Zero Knowledge (ZKML), Bitcoin (forks) & Tendermint protocol.
 
-- 5x throughput increase of the external partnership to 50K QPS by designing data driven system for client
-- Individual contributor maintaining identity graph and personalized ads content recommendation engine
+### TikTok (2020-2021)
 
-#### Magic Leap | Plantation, FL
-**Machine Learning Engineer** | April 2019 - March 2020
+* Software Engineer R&D
+* Designed data-driven systems for client-side rendering and personalized ads content recommendation engine.
 
-- Implementing secure shared cloud services to scale heavy spatial computations of augmented reality (AR)
-- Designed a computer vision model using RCNN to detect and redact faces on Magic Leap One AR devices
+### Magic Leap (2019-2020)
 
-#### Moody's Analytics | New York, NY
-**Data Scientist Intern** | June 2018 - Sept 2018
+* Machine Learning Engineer
+* Implemented secure shared cloud services to scale heavy spatial computations of augmented reality (AR).
+* Designed a computer vision model using RCNN to detect and redact faces on Magic Leap One AR devices.
 
-- Built random forest tree regression and categorical classification to predict leverage ratio, ratings, etc
+### Moody's Analytics (2018)
 
-#### Amazon | Seattle, WA  
-**Software Engineering Intern** | June 2017 - Sept 2017
+* Data Scientist Intern
+* Built random forest tree regression and categorical classification to predict leverage ratio, ratings, etc.
 
-- Integrated new systems to handle large data inputs of about a million hosts from data centers racks
+### Amazon (2017)
 
-#### Splunk | San Francisco, CA
-**Software Engineering Intern** | June 2016 - Feb 2017  
+* Software Engineering Intern
+* Integrated new systems to handle large data inputs of about a million hosts from data centers racks.
 
-- Developed automated tests that were involved by 1000+ developers and testing engineers across teams
+**Side Experience**
+-------------------
 
-### Education
+### Lexie.ai (2015-2016)
 
-#### University of California | Davis, CA
-**Bachelors of Science (B.S.) in Computer Science (Software Focused), ACM ICPC Participant** | Sept 2014 - Dec 2018
+* Technical Advisor
+* Helped onboard AI system for future of e-commerce using Smart Contracts tokenization & AI-copilot.
 
-### Skills & Side Projects ([Github](http://github.com/hooman96))
+### 310.ai (2015-2016)
 
-- [**Graceful Shutdown**](https://gin-gonic.com): Contributed to Gin Web Framework for processing graceful shutdown mechanism. **Go**
-- [**WLAN**](https://github.com/hooman96/csma_ca_wlan): M/M/1 queue server simulation of carrier sense multiple access with collision avoidance. **C/C++**
-- [**Swift Shell**](https://github.com/hooman96/SwiftShell): Collaborated on command line interface inside the swift playground as open source tool. **Bash**
-- [**Credit Loan**](https://github.com/hooman96/credit_loan): Kaggle ML competition to train predictive model using regressions. **Python/TensorFlow**
-- [**Image Query**](https://github.com/hooman96/image_query): Deep learning search by k-means clustering with visual vocabulary correlations. **PyTorch**
-- [**H Language**](https://github.com/hooman96/H-Language): New language H with simple syntax with semantics of functional programming features. **Java**
+* Founding Engineer
+* Built generative AI system & infrastructure for Biotech companies using Transformers, NLP & LLMs.
 
+### Mho, Inc (2015-2016)
 
+* Founder, CTO
+* Led the hybrid app product of AI chatbot using bidirectional recurrent convolutional neural network.
 
+**Education**
+------------
+
+### University of California, Davis (2014-2018)
+
+* Bachelor of Science in Computer Science (Software Focused), ACM ICPC Participant
+
+**Projects**
+------------
+
+### WLAN (2016)
+
+* Parallel M/M/1 queue server simulation of carrier sense multiple access collision avoidance.
+
+### Credit Loan (2018)
+
+* Kaggle ML competition to train predictive model using regressions.
+
+### Image Query (2019)
+
+* Deep learning search by k-means clustering with visual vocabulary correlations.
+
+### H Language (2019)
+
+* New language H with simple syntax with semantics of functional programming features.
+
+### PPoker (2020)
+
+* App interface for poker admin and cashier tasks including game scenarios.
+
+**Awards & Presentations**
+-------------------------
+
+* NFT Swap on Terra Platform, 1000 UST grant @ Miami Hack Week (MHW) - 2021
+
+* Guest Speaker for Lyvo Bootcamp @ Online Zoom Webinar - 2020
+
+* Guest Speaker for Geekle Python Global Summit @ Online Streaming - 2020
+
+* Magic Leap Internal Magic Verse Jam Hackathon @ Florida HQ - 2019
+
+* Machine Learning Kaggle Competition Online Loan Advisor @ UCD - 2018
+
+* ASUCD Entrepreneurship Fund Grant ShaK Project - 2017
+
+* Prize Winner of Amazon Alexa Skill Educational Feed @ HackDavis - 2017
+
+* Collegiate Racquetball IM (Intermural) League Champion - 2016
+
+* ACM ICPC Programming Competition Participant @ Cal Berkeley - 2015
+
+* Piazza Hackathon Presentation @ Palantir: Application Platform - 2014
+
+* Finalist Santa Clara University Hackathon: Migo, Expedia for Philantropy - 2014
+
+**Programming Skills**
+-------------------------
+
+* Languages: Golang, Python, Javascript, C/C++, SQL, Java
+* Technologies: AWS, GCP, React, Kafka, Redis, SageMaker, Unix
