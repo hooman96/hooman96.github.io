@@ -18,12 +18,12 @@ Highly motivated and experienced software engineer with a strong background in m
 
 ### Momento AI (2023-Present)
 
-* Technical Founder
+* Technical Founder & CAIO
 * Built a hybrid multi-cloud mapping and migration platform using Docker/Kubernetes and Terraform CLI tools with different SDKs in Python, Go, and Java.
 
 ### Amazon Web Services (2022-2023)
 
-* Software Development Engineer, L5
+* Software Development Engineer, Tech Lead, L5
 * Contributed to the design of fraudulent detection within in-house service processing as part of the AI initiatives.
 * Achieved 75% latency optimization while enhancing payment transactions pagination for global customers.
 
