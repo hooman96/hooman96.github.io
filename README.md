@@ -3,7 +3,7 @@
 
 **Contact Information**
 
-* Email: [adam.m.hooman@gmail.com](mailto:adam.m.hooman@gmail.com)
+* Email: [adam.m.hooman at gmail . com](mailto:adam.m.hooman@gmail.com)
 * LinkedIn: [https://linkedin.com/in/hooistheman](https://linkedin.com/in/hooistheman)
 * Website: [https://hooistheman.vercel.app](https://hooistheman.vercel.app)
 * GitHub: [https://github.com/hooman96](https://github.com/hooman96)
