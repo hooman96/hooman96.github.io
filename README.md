@@ -3,10 +3,11 @@
 
 **Contact Information**
 
-* Email: [adam.m.hooman at gmail . com](mailto:adam.m.hooman@gmail.com)
+* Email: [hooistheman at gmail . com](mailto:hooistheman@gmail.com)
 * LinkedIn: [https://linkedin.com/in/hooistheman](https://linkedin.com/in/hooistheman)
 * Website: [https://hooistheman.vercel.app](https://hooistheman.vercel.app)
 * GitHub: [https://github.com/hooman96](https://github.com/hooman96)
+* Research: [Google Scholar Profile](https://scholar.google.com/citations?user=749Bi3UAAAAJ&)
 
 **Summary**
 ----------
@@ -16,7 +17,11 @@ Highly motivated and experienced software engineer with a strong background in m
 **Work Experience**
 -------------------
 
-### Momento AI (2023-Present)
+### Meta AI (2025-Present)
+* Technical Lead
+* Orchestrating agentic AI infrastructure at scale for different applied AI use cases such as semantic search, vector-based document retrieval, and image & video compression for post-training inference optimization.  
+
+### Momento AI (2023-2025)
 
 * Technical Founder & CAIO
 * Built a hybrid multi-cloud mapping and migration platform using Docker/Kubernetes and Terraform CLI tools with different SDKs in Python, Go, and Java.
@@ -54,15 +59,18 @@ Highly motivated and experienced software engineer with a strong background in m
 * Software Engineering Intern
 * Integrated new systems to handle large data inputs of about a million hosts from data centers racks.
 
+### Splunk (2016)
+* Software Engineering & Site Realibility Intern
+* 3 months full-time summer internship, 6 months co-op
+
 **Side Experience**
 -------------------
 
-### Lexie.ai (2015-2016)
+### March Health (2024-2025)
+* Founding Partner
+* Supervised technical direction and advised leadership on usage of AI (LLM, RL, etc) for health care approaches.
 
-* Technical Advisor
-* Helped onboard AI system for future of e-commerce using Smart Contracts tokenization & AI-copilot.
-
-### 310.ai (2015-2016)
+### 310.ai (2020-2021)
 
 * Founding Engineer
 * Built generative AI system & infrastructure for Biotech companies using Transformers, NLP & LLMs.
@@ -74,6 +82,10 @@ Highly motivated and experienced software engineer with a strong background in m
 
 **Education**
 ------------
+
+### Georgia Institute of Technolgy (2024-TBD)
+
+* Masters of Science in Computer Science (AI Focused), OSMCS Program
 
 ### University of California, Davis (2014-2018)
 
