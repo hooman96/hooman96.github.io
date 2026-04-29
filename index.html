@@ -1,295 +1,683 @@
 <!DOCTYPE html>
-<!--
-    Photon by HTML5 UP
-    html5up.net | @n33co
-    Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Hooman Personal Website</title>
-        <link rel="stylesheet" href="assets/css/main.css">
-        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-        <!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css"><![endif]-->
-        <!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css"><![endif]-->
-        <!-- TikTok Pixel `hooman website` -->
-        <script>
-          (function() {
-            var ta = document.createElement('script'); ta.type = 'text/javascript'; ta.async = true;
-            ta.src = 'https://analytics.tiktok.com/i18n/pixel/sdk.js?sdkid=BSJLLGDEO40H95666G3G';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(ta, s);
-          })();
-        </script>
-        <!-- END `hooman website` Pixel -->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Hooman Mohammadi — Senior AI/ML Engineer & Technical Lead at Meta AI. Building agentic LLM systems, post-training optimization, and inference at scale.">
+<meta name="author" content="Hooman Mohammadi">
+<meta name="theme-color" content="#05070f">
 
-        <!-- Personal TikTok Business Pixel -->
-        <script>
-        !function (w, d, t) {
-          w.TiktokAnalyticsObject=t;var ttq=w[t]=w[t]||[];ttq.methods=["page","track","identify","instances","debug","on","off","once","ready","alias","group"],ttq.setAndDefer=function(t,e){t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}};for(var i=0;i<ttq.methods.length;i++)ttq.setAndDefer(ttq,ttq.methods[i]);ttq.instance=function(t){for(var e=ttq._i[t]||[],n=0;n<ttq.methods.length;n++)ttq.setAndDefer(e,ttq.methods[n]);return e},ttq.load=function(e){var n="https://analytics.tiktok.com/i18n/pixel/events.js";ttq._i=ttq._i||{},ttq._i[e]=[],ttq._i[e]._u=n;var i=document.createElement("script");i.type="text/javascript",i.async=!0,i.src=n+"?sdkid="+e+"&lib="+t;var a=document.getElementsByTagName("script")[0];a.parentNode.insertBefore(i,a)};
-          ttq.load('BSG52KAHO5CA4NQ7AL0G');
-          ttq.page();
-        }(window, document, 'ttq');
-        </script>
-        <!-- End TikTok Business Pixel -->
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Hooman Mohammadi — Senior AI/ML Engineer">
+<meta property="og:description" content="Building agentic LLM systems at Meta that process 10M+ posts daily. Post-training optimization, inference at scale, ML systems shipping to billions.">
+<meta property="og:url" content="https://hooistheman.vercel.app">
 
-        <!-- Facebook Pixel Code -->
-        <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', '3837814656233292');
-        fbq('track', 'PageView');
-        </script>
-        <noscript><img height="1" width="1" style="display:none"
-        src="https://www.facebook.com/tr?id=3837814656233292&ev=PageView&noscript=1"
-        /></noscript>
-        <!-- End Facebook Pixel Code -->
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hooman Mohammadi — Senior AI/ML Engineer">
+<meta name="twitter:description" content="Building agentic LLM systems at Meta that process 10M+ posts daily.">
 
-        <!-- Magic Leap Prismatic Import -->
-        <script src="https://unpkg.com/@magicleap/prismatic"></script>
-        <script src="node_modules/@magicleap/prismatic/prismatic.min.js"></script>
-        <!-- End Magic Leap Prismatic Import -->
-    </head>
-    <body>
-        <!-- Magic Balloons -->
-        <ml-model src="magicleap/balloon.glb" style="width: 350px; height: 350px"></ml-model>
-        <ml-model src="magicleap/balloon.glb" style="width: 350px; height: 350px"></ml-model>
-        <ml-model src="magicleap/balloon.glb" style="width: 350px; height: 350px"></ml-model>
-        <!-- End Magic Balloons -->
-        
-        <!-- Header -->
-        <section id="header">
-            <div class="inner">
-                <span class="icon major fa-cloud"></span>
-                <h1>Hi, I'm <strong>Hooman.</strong> <br />Continuous Learner, Software Savvy, Empathetic Leader
-                <br /> <br /> <a href="https://www.calendly.com/hooistheman-1-1"> Virtual Chat </a> </h1>
-                <p>Check out my portfolio and share your feedback. <br /></p>
+<title>Hooman Mohammadi — Senior AI/ML Engineer</title>
 
-                <ul class="actions">
-                    <li><a href="#one" class="button scrolly">Discover</a></li>
-                </ul>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230081FB'/%3E%3Ctext x='50' y='68' font-family='sans-serif' font-size='60' font-weight='800' text-anchor='middle' fill='white'%3Eh%3C/text%3E%3C/svg%3E">
 
-            </div>
-        </section>
-        <!-- End Header -->
-    </body>
-</html>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
 
-<section id="one" class="main style1">
-    <div class="container">
-        <div class="row 250%">
-            <div class="6u 12u$(medium)">
-                <header class="major">
-                    <h2>About Me</h2>
-                </header>
-                <p> 
-                    <!-- My name, Hooman, is a Farsi name from ancient Persian poetry which means benevolent and friendly.
-                    <br /> <br /> -->
-                    I moved to the Silicon Valley of the United States when I was seventeen to pursue my dreams as a global individual and explore my life journey.
-                    <!-- <br /> <br /> -->
-                    <!-- I initially joined University of California, Davis to become a doctor and follow my family's tradition but ended up graduating with a computer science degree to follow my own passion. -->
-                    <br /> <br />
-                    My passion is solving challenging problems around me using new and great technology to create a positive impact on the world. 
-                    <!-- <br /> <br /> -->
-                    <!-- My dream is to run my tech startup in Silicon Valley. -->
-                    <br /> <br />
-                    Learning, failing, and persisting are my tools to achieve my goals. I have been through lots of ups and downs; however, I am grateful for my achievements and proud of my accomplishments. 
-                    <br /> <br />
-                    The videos are Instagram Live and YouTube podcast channel about my life story. For podcasts feel free to contact me. I am planning to add English subtitle for Persian talks.
-                    <br /> <br />
-                    I also have a wide range of side gigs (<a href="http://hooman96.github.io/pelpins">technical blogs</a>, <a href="https://hooman96.github.io/NFT">mint NFTs</a>, and <a href="#classical_guitar">music</a>), and hobbies such as hiking, playing tennis, and skiing.
-                    <br /> <br />
-                </p>
-            </div>
+<style>
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  :root{
+    --bg:#05070f;--bg2:#080c18;--card:#0a0f1e;
+    --border:rgba(255,255,255,0.06);--borderh:rgba(0,129,251,0.35);
+    --blue:#0081FB;--blueb:#2196ff;--cyan:#00c8ff;
+    --text:#eef2ff;--muted:#7a8aaa;--dim:#3a4560;
+    --mono:'JetBrains Mono',ui-monospace,monospace;
+    --sans:'DM Sans',system-ui,sans-serif;
+    --disp:'Syne','DM Sans',sans-serif;
+    --nav-h:72px;
+  }
+  html{scroll-behavior:smooth;scroll-padding-top:var(--nav-h);}
+  body{background:var(--bg);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.7;overflow-x:hidden;}
+  /* Custom cursor only on devices that actually have a fine pointer (mouse) */
+  @media (hover:hover) and (pointer:fine){
+    body{cursor:none;}
+  }
+  ::-webkit-scrollbar{width:3px;}
+  ::-webkit-scrollbar-track{background:var(--bg);}
+  ::-webkit-scrollbar-thumb{background:var(--blue);border-radius:2px;}
 
-            <div class="6u$ 12u$(medium)">
-                <div class="12u$">
-                    <span class="image fit"></span>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/3_yiXDecW00?start=4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
+  /* Visible keyboard focus (cursor:none hides the mouse but keyboard users still need a focus ring) */
+  :focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:3px;}
+  a:focus-visible,button:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;}
 
-                <div class="12u$">
-                    <span class="image fit"></span>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/9oSSRzGDWDM" title="YouTube video player 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
+  /* Skip link for keyboard / screen reader users */
+  .skip{position:absolute;top:-100px;left:1rem;background:var(--blue);color:#fff;padding:.6rem 1rem;font-family:var(--mono);font-size:.7rem;text-decoration:none;border-radius:4px;z-index:1000;transition:top .2s;}
+  .skip:focus{top:1rem;}
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce){
+    *,*::before,*::after{
+      animation-duration:.01ms !important;
+      animation-iteration-count:1 !important;
+      transition-duration:.01ms !important;
+      scroll-behavior:auto !important;
+    }
+    .rv{opacity:1 !important;transform:none !important;}
+    .blink{animation:none;}
+    .cur,.curR{display:none !important;}
+  }
+
+  /* No-JS fallback — without this, the .rv elements stay invisible if JS is disabled */
+  .no-js .rv{opacity:1;transform:none;}
+
+  /* cursor */
+  .cur{width:8px;height:8px;background:var(--blue);border-radius:50%;position:fixed;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s;will-change:left,top;}
+  .curR{width:30px;height:30px;border:1px solid rgba(0,129,251,.45);border-radius:50%;position:fixed;pointer-events:none;z-index:9998;transform:translate(-50%,-50%);transition:transform .13s ease,width .25s,height .25s;will-change:left,top;}
+  body:has(a:hover) .cur,body:has(button:hover) .cur{width:12px;height:12px;background:var(--cyan);}
+  body:has(a:hover) .curR,body:has(button:hover) .curR{width:40px;height:40px;border-color:var(--cyan);}
+  /* Hide custom cursor on touch / coarse pointer devices */
+  @media not all and (hover:hover) and (pointer:fine){
+    .cur,.curR{display:none;}
+  }
+
+  /* nav */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.3rem 4rem;display:flex;align-items:center;justify-content:space-between;transition:background .35s,backdrop-filter .35s,border-color .35s;border-bottom:1px solid transparent;}
+  nav.sc{background:rgba(5,7,15,.88);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border-color:var(--border);}
+  .logo{font-family:var(--disp);font-size:1rem;font-weight:800;color:var(--text);text-decoration:none;letter-spacing:-.03em;}
+  .logo span{color:var(--blue);}
+  .navl{display:flex;gap:2.5rem;list-style:none;}
+  .navl a{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;color:var(--muted);text-decoration:none;text-transform:uppercase;transition:color .2s;position:relative;}
+  .navl a::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:1px;background:var(--blue);transform:scaleX(0);transition:transform .2s;}
+  .navl a:hover,.navl a:focus-visible{color:var(--text);}
+  .navl a:hover::after,.navl a:focus-visible::after{transform:scaleX(1);}
+
+  /* hero */
+  #hero{min-height:100vh;min-height:100dvh;display:flex;align-items:center;padding:0 4rem;position:relative;overflow:hidden;}
+  .hgrid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,129,251,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(0,129,251,.04) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse 75% 65% at 45% 50%,black 25%,transparent 100%);mask-image:radial-gradient(ellipse 75% 65% at 45% 50%,black 25%,transparent 100%);pointer-events:none;}
+  .orb{position:absolute;border-radius:50%;pointer-events:none;}
+  .o1{width:700px;height:700px;background:radial-gradient(circle,rgba(0,129,251,.11) 0%,transparent 65%);top:-150px;left:-200px;animation:drift 9s ease-in-out infinite alternate;}
+  .o2{width:450px;height:450px;background:radial-gradient(circle,rgba(0,200,255,.07) 0%,transparent 65%);bottom:80px;right:80px;animation:drift 11s ease-in-out infinite alternate-reverse;}
+  @keyframes drift{to{transform:translate(70px,50px) scale(1.08);}}
+  .hc{position:relative;max-width:820px;}
+  .hbadge{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;color:var(--blue);text-transform:uppercase;margin-bottom:1.8rem;opacity:0;animation:fu .7s .25s forwards;}
+  .hbadge::before{content:'';display:inline-block;width:28px;height:1px;background:var(--blue);}
+  .hname{font-family:var(--disp);font-size:clamp(3rem,7.5vw,6rem);font-weight:800;line-height:1.0;letter-spacing:-.04em;margin-bottom:1.2rem;opacity:0;animation:fu .7s .45s forwards;}
+  .hname .ac{color:var(--blue);}
+  .htyped{font-family:var(--mono);font-size:.95rem;color:var(--muted);margin-bottom:2rem;min-height:1.5em;opacity:0;animation:fu .7s .65s forwards;}
+  .blink{display:inline-block;width:2px;height:.9em;background:var(--blue);margin-left:1px;vertical-align:middle;animation:blink 1s step-end infinite;}
+  @keyframes blink{50%{opacity:0;}}
+  .hdesc{font-size:1.05rem;color:var(--muted);max-width:520px;line-height:1.85;margin-bottom:2.8rem;opacity:0;animation:fu .7s .85s forwards;}
+  .hcta{display:flex;gap:.9rem;flex-wrap:wrap;opacity:0;animation:fu .7s 1.05s forwards;}
+  .bp{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.9rem;background:var(--blue);color:#fff;font-family:var(--mono);font-size:.73rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:4px;transition:background .2s,transform .2s,box-shadow .2s;}
+  .bp:hover{background:var(--blueb);transform:translateY(-2px);box-shadow:0 14px 40px rgba(0,129,251,.3);}
+  .bg{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.9rem;border:1px solid var(--borderh);color:var(--blue);font-family:var(--mono);font-size:.73rem;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;border-radius:4px;transition:background .2s,transform .2s;}
+  .bg:hover{background:rgba(0,129,251,.07);transform:translateY(-2px);}
+  @media (hover:hover) and (pointer:fine){
+    .bp,.bg{cursor:none;}
+  }
+  .sh{position:absolute;bottom:2.5rem;left:4rem;display:flex;align-items:center;gap:.7rem;font-family:var(--mono);font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--dim);opacity:0;animation:fu .7s 1.5s forwards;}
+  .sl{width:1px;height:38px;background:linear-gradient(to bottom,var(--blue),transparent);animation:sp 2s ease-in-out infinite;}
+  @keyframes sp{50%{opacity:.25;}}
+  @keyframes fu{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+
+  /* sections */
+  section{padding:7rem 4rem;position:relative;}
+  .slabel{font-family:var(--mono);font-size:.68rem;letter-spacing:.13em;color:var(--blue);text-transform:uppercase;margin-bottom:.5rem;display:flex;align-items:center;gap:.7rem;}
+  .slabel::before{content:'';display:inline-block;width:18px;height:1px;background:var(--blue);}
+  .stitle{font-family:var(--disp);font-size:clamp(1.9rem,3.5vw,2.8rem);font-weight:800;letter-spacing:-.03em;line-height:1.1;margin-bottom:3.5rem;}
+  .rv{opacity:0;transform:translateY(28px);transition:opacity .65s ease,transform .65s ease;}
+  .rv.on{opacity:1;transform:translateY(0);}
+
+  /* about */
+  #about{background:var(--bg2);}
+  .agrid{display:grid;grid-template-columns:1fr 1.65fr;gap:5rem;align-items:start;max-width:1080px;}
+  .avframe{width:100%;aspect-ratio:1;border:1px solid var(--borderh);border-radius:8px;background:var(--card);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+  .avframe::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--cyan));}
+  .avinit{font-family:var(--disp);font-size:5.5rem;font-weight:800;color:var(--blue);opacity:.18;letter-spacing:-.04em;}
+  .avtag{position:absolute;bottom:-1rem;right:-1rem;background:var(--blue);color:#fff;font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;padding:.45rem .85rem;border-radius:4px;white-space:nowrap;}
+  .scholar{margin-top:2.5rem;display:flex;align-items:center;gap:.6rem;font-family:var(--mono);font-size:.65rem;letter-spacing:.08em;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:.5rem .9rem;border-radius:4px;transition:border-color .2s,color .2s;width:fit-content;}
+  .scholar:hover,.scholar:focus-visible{border-color:var(--borderh);color:var(--blue);}
+  .atxt p{color:var(--muted);margin-bottom:1.4rem;font-size:1.02rem;}
+  .astats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:2.5rem;padding-top:2.5rem;border-top:1px solid var(--border);}
+  .snum{font-family:var(--disp);font-size:2rem;font-weight:800;letter-spacing:-.04em;line-height:1;}
+  .snum .acc{color:var(--blue);}
+  .slbl{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;color:var(--dim);text-transform:uppercase;margin-top:.3rem;}
+
+  /* experience */
+  #experience{background:var(--bg);}
+  .expl{max-width:860px;}
+  .expi{display:grid;grid-template-columns:190px 1fr;gap:0 3rem;position:relative;padding-bottom:3.5rem;}
+  .expi:not(:last-child)::before{content:'';position:absolute;left:189px;top:1.4rem;bottom:0;width:1px;background:linear-gradient(to bottom,var(--borderh),transparent);}
+  .expper{font-family:var(--mono);font-size:.68rem;color:var(--dim);letter-spacing:.05em;padding-top:.25rem;text-align:right;}
+  .expdot{position:absolute;left:184px;top:.25rem;width:12px;height:12px;border-radius:50%;background:var(--blue);border:2px solid var(--bg);box-shadow:0 0 0 3px rgba(0,129,251,.18);}
+  .expi.current .expdot{animation:pd 2.2s ease-in-out infinite;}
+  @keyframes pd{0%,100%{box-shadow:0 0 0 3px rgba(0,129,251,.2);}50%{box-shadow:0 0 0 9px rgba(0,129,251,0);}}
+  .expco{font-family:var(--disp);font-size:1.25rem;font-weight:700;letter-spacing:-.02em;margin-bottom:.25rem;}
+  .expco a,.expco span{color:var(--text);text-decoration:none;transition:color .2s;}
+  .expco a:hover,.expco a:focus-visible{color:var(--blue);}
+  .exprole{font-family:var(--mono);font-size:.72rem;color:var(--blue);letter-spacing:.07em;margin-bottom:.9rem;text-transform:uppercase;}
+  .expdesc{color:var(--muted);font-size:.93rem;line-height:1.82;margin-bottom:.9rem;}
+  .exptags{display:flex;flex-wrap:wrap;gap:.45rem;}
+  .tag{font-family:var(--mono);font-size:.62rem;letter-spacing:.07em;padding:.28rem .65rem;border:1px solid var(--border);border-radius:3px;color:var(--muted);text-transform:uppercase;transition:border-color .2s,color .2s;}
+  .tag:hover{border-color:var(--blue);color:var(--blue);}
+
+  /* projects */
+  #projects{background:var(--bg2);}
+  .pgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(330px,1fr));gap:1.4rem;}
+  .pcard{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:1.8rem;position:relative;overflow:hidden;transition:border-color .3s,transform .3s,box-shadow .3s;display:flex;flex-direction:column;gap:.9rem;}
+  .pcard::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--blue),var(--cyan));transform:scaleX(0);transform-origin:left;transition:transform .4s ease;}
+  .pcard:hover{border-color:var(--borderh);transform:translateY(-4px);box-shadow:0 20px 55px rgba(0,0,0,.45);}
+  .pcard:hover::before{transform:scaleX(1);}
+  .phead{display:flex;justify-content:space-between;align-items:flex-start;}
+  .picon{width:40px;height:40px;border-radius:7px;background:rgba(0,129,251,.1);border:1px solid rgba(0,129,251,.18);display:flex;align-items:center;justify-content:center;font-size:1.05rem;}
+  .plinks{display:flex;gap:.5rem;}
+  .plnk{width:30px;height:30px;border:1px solid var(--border);border-radius:4px;display:flex;align-items:center;justify-content:center;color:var(--muted);text-decoration:none;font-family:var(--mono);font-size:.66rem;transition:border-color .2s,color .2s;}
+  .plnk:hover,.plnk:focus-visible{border-color:var(--blue);color:var(--blue);}
+  .pname{font-family:var(--disp);font-size:1.12rem;font-weight:700;letter-spacing:-.02em;}
+  .pdesc{font-size:.88rem;color:var(--muted);line-height:1.72;}
+  .ptags{display:flex;flex-wrap:wrap;gap:.38rem;margin-top:auto;}
+  .ptag{font-family:var(--mono);font-size:.59rem;letter-spacing:.07em;padding:.22rem .58rem;background:rgba(0,129,251,.08);color:var(--blue);border-radius:3px;text-transform:uppercase;}
+
+  /* skills */
+  #skills{background:var(--bg);}
+  .skwrap{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:1.8rem;max-width:1100px;}
+  .skcat{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:1.7rem;transition:border-color .3s;}
+  .skcat:hover{border-color:var(--borderh);}
+  .skh{display:flex;align-items:center;gap:.7rem;margin-bottom:1.3rem;}
+  .skih{width:32px;height:32px;border-radius:6px;background:rgba(0,129,251,.1);display:flex;align-items:center;justify-content:center;font-size:.88rem;}
+  .sknm{font-family:var(--disp);font-size:.92rem;font-weight:700;}
+  .skp{display:flex;flex-wrap:wrap;gap:.45rem;}
+  .pill{font-family:var(--mono);font-size:.64rem;letter-spacing:.05em;padding:.32rem .75rem;border:1px solid var(--border);border-radius:20px;color:var(--muted);transition:border-color .2s,color .2s,background .2s;}
+  .pill:hover{border-color:var(--blue);color:var(--text);background:rgba(0,129,251,.05);}
+  .pill.h{border-color:rgba(0,129,251,.3);color:var(--blue);}
+
+  /* research */
+  #research{background:var(--bg2);}
+  .rgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.4rem;max-width:1000px;}
+  .rcard{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:1.8rem;transition:border-color .3s;}
+  .rcard:hover{border-color:var(--borderh);}
+  .rtag{font-family:var(--mono);font-size:.6rem;letter-spacing:.1em;color:var(--blue);text-transform:uppercase;margin-bottom:.6rem;}
+  .rtitle{font-family:var(--disp);font-size:1.05rem;font-weight:700;letter-spacing:-.02em;margin-bottom:.7rem;line-height:1.3;}
+  .rdesc{font-size:.88rem;color:var(--muted);line-height:1.72;}
+  .ryear{font-family:var(--mono);font-size:.62rem;color:var(--dim);margin-top:.9rem;}
+
+  /* contact */
+  #contact{background:var(--bg);}
+  .ctwrap{max-width:680px;}
+  .cttitle{font-family:var(--disp);font-size:clamp(2.3rem,5vw,3.8rem);font-weight:800;letter-spacing:-.04em;line-height:1.08;margin-bottom:1.4rem;margin-top:.5rem;}
+  .cttitle .ac{color:var(--blue);}
+  .ctsub{color:var(--muted);font-size:1.02rem;margin-bottom:2.8rem;line-height:1.82;}
+  .ctlinks{display:flex;flex-wrap:wrap;gap:.9rem;}
+  .ctlnk{display:inline-flex;align-items:center;gap:.65rem;padding:.9rem 1.4rem;border:1px solid var(--border);border-radius:6px;color:var(--muted);text-decoration:none;font-family:var(--mono);font-size:.75rem;letter-spacing:.05em;background:var(--card);transition:border-color .25s,color .25s,background .25s,transform .25s;}
+  .ctlnk svg{width:15px;height:15px;flex-shrink:0;}
+  .ctlnk:hover,.ctlnk:focus-visible{border-color:var(--blue);color:var(--text);background:rgba(0,129,251,.06);transform:translateY(-2px);}
+  @media (hover:hover) and (pointer:fine){
+    .ctlnk{cursor:none;}
+  }
+
+  /* footer */
+  footer{padding:1.8rem 4rem;border-top:1px solid var(--border);background:var(--bg);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.8rem;}
+  .ftc,.ftn{font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;color:var(--dim);text-transform:uppercase;}
+  .ftn span{color:var(--blue);}
+
+  @media (max-width:768px){
+    nav{padding:1.1rem 1.4rem;}
+    .navl{gap:1.2rem;}
+    section{padding:5rem 1.4rem;}
+    #hero{padding:0 1.4rem;}
+    .agrid{grid-template-columns:1fr;gap:2.5rem;}
+    .expi{grid-template-columns:1fr;gap:.4rem;}
+    .expi:not(:last-child)::before,.expdot{display:none;}
+    .expper{text-align:left;}
+    footer{padding:1.4rem;flex-direction:column;gap:.8rem;text-align:center;}
+    .sh{display:none;}
+  }
+
+  @media (max-width:520px){
+    .navl{display:none;}
+    .ctlinks{flex-direction:column;align-items:stretch;}
+  }
+</style>
+</head>
+<body class="no-js">
+
+<!-- Skip to content link for accessibility -->
+<a href="#hero" class="skip">Skip to content</a>
+
+<div class="cur" id="cur" aria-hidden="true"></div>
+<div class="curR" id="curR" aria-hidden="true"></div>
+
+<nav id="nav" aria-label="Primary">
+  <a href="#hero" class="logo" aria-label="Home">hooistheman<span>.</span></a>
+  <ul class="navl">
+    <li><a href="#about">About</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#research">Research</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section id="hero" aria-labelledby="hero-name">
+  <div class="hgrid" aria-hidden="true"></div>
+  <div class="orb o1" aria-hidden="true"></div>
+  <div class="orb o2" aria-hidden="true"></div>
+  <div class="hc">
+    <p class="hbadge">Senior AI/ML Engineer · Technical Lead · Meta AI</p>
+    <h1 class="hname" id="hero-name">Hooman<br><span class="ac">Mohammadi.</span></h1>
+    <div class="htyped" aria-hidden="true"><span id="typed"></span><span class="blink"></span></div>
+    <p class="hdesc">Building agentic LLM systems at Meta that process 10M+ posts daily. Specializing in post-training optimization, inference at scale, and ML systems that ship to billions.</p>
+    <div class="hcta">
+      <a href="#projects" class="bp">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+        View Work
+      </a>
+      <a href="#contact" class="bg">Get In Touch</a>
     </div>
+  </div>
+  <div class="sh" aria-hidden="true"><div class="sl"></div>Scroll</div>
 </section>
 
-<section id="two" class="main style2">
-    <div class="container">
-        <div class="row 150%">
-            <div class="6u 12u$(medium)">
-                <ul class="major-icons">
-                    <li><span class="icon style1 major fa-code"></span></li>
-                    <li><span class="icon style2 major fa-bolt"></span></li>
-                    <li><span class="icon style3 major fa-cloud"></span></li>
-                    <li><span class="icon style4 major fa-file"></span></li>
-                    <li><span class="icon style5 major fa-desktop"></span></li>
-                    <li><span class="icon style6 major fa-code-fork"></span></li>
-                </ul>
-            </div>
-            <div class="6u$ 12u$(medium)">
-                <header class="major">
-                    <h2>Experience Overview</h2>
-                </header>
-                <p> 0. Founder & CTO at  <a href="http://momentoai.xyz">Momento AI</a>  <a href="http://momento-six.vercel.app"> (B2B SaaS Cloud Mapping Platform)</a></p>
-                <p> 1. Part Time Research Collaborator at University of Washington (UW) </p>
-                <p> 2. Former Tech Lead Software Engineer at Amazon Web Services (AWS) </p>
-                <p> 3. Former Senior Protocol Engineer at Coinbase Cloud (Bison Trails) </p>
-                <p> 4. Former CEO & Founder at <a href="https://newmomento-rust.vercel.app"> Crypto                 Influencer Gift, NiftyGems </a> </p>
-                <p> 5. Investor in Stealth Mode Startup (Crypto & AI) & Technical Advisor Pre-Seed stage of 310.ai (AI & Biotech)</p>
-                <p> 6. Former Software Engineer R&D at TikTok (ByteDance) </p>
-                <p> 7. Former Machine Learning Engineer at Magic Leap </p>  
-                <p> 8. Former Data Science Intern at Moody's Analytics </p>
-                <p> 9. Former Software Engineer Intern at Amazon </p> 
-                <p> 10. Former SDET & SRE Intern at Splunk </p>
-
-
-                <!-- <p> . Founder & CEO <a href="https://mhoinc.github.io/">Mho, Inc.</a> </p> -->
-                <!-- <p> 6. <a href="https://www.quora.com/What-was-your-experience-at-NODET"> NODET </a> and NHSSC Alumni </p> -->
-            </div>
-        </div>
+<!-- ABOUT -->
+<section id="about" aria-labelledby="about-title">
+  <p class="slabel rv">01 — About</p>
+  <h2 class="stitle rv" id="about-title">Who I Am</h2>
+  <div class="agrid">
+    <div class="rv" style="transition-delay:.1s">
+      <div style="position:relative;max-width:340px;">
+        <div class="avframe" aria-hidden="true"><span class="avinit">HM</span></div>
+        <div class="avtag" aria-hidden="true">📍 Menlo Park, CA</div>
+      </div>
+      <a href="https://scholar.google.com/citations?user=749Bi3UAAAAJ" target="_blank" rel="noopener noreferrer" class="scholar">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+        Google Scholar Profile
+      </a>
     </div>
+    <div class="atxt rv" style="transition-delay:.2s">
+      <p>Senior AI/ML engineer and technical lead at Meta AI, driving post-training and inference optimization for multi-modal LLM systems at massive scale. Former founder of Momento AI, and engineering alumnus of AWS, Coinbase, TikTok, and Magic Leap.</p>
+      <p>My work lives at the boundary of systems engineering and machine learning — designing agentic AI pipelines, hardening them against adversarial prompt injection and tool misuse, and squeezing maximum throughput out of GPU inference infrastructure for production workloads serving billions of users.</p>
+      <p>Pursuing an M.S. in CS (ML/AI) at Georgia Tech while shipping production systems — because the best engineers never stop learning.</p>
+      <dl class="astats">
+        <div><dt class="snum">7<span class="acc">+</span></dt><dd class="slbl">Years Eng.</dd></div>
+        <div><dt class="snum">10M<span class="acc">+</span></dt><dd class="slbl">Posts/Day</dd></div>
+        <div><dt class="snum">6<span class="acc">+</span></dt><dd class="slbl">Tier-1 Cos</dd></div>
+      </dl>
+    </div>
+  </div>
 </section>
 
-<section id="three" class="main style1 special">
-    <div class="container">
-        <header class="major">
-            <h2>Side Projects</h2>
-        </header>
-        <p><!-- see the source code of projects on my <a href="https://github.com/hooman96">Github @hooman96</a> --></p>
-        <div class="row 150%">
-            <div class="4u 12u$(medium)">
-                <span class="image fit"><img src="images/balloons.png" alt="" /></span>
-                <h3>Personal Website</h3>
-                <p>This website is not just static typical personal website. It collects clicks actions just like advertising companies do using Pixel technologies. Moreover, as you can see in the picture above there are Augmented Reality (AR) balloons stored in the cloud system if you use Helio browser and AR device such as Magic Leap One, you can see its content and 3D assets.</p>
-                <ul class="actions">
-                    <li><a href="https://www.linkedin.com/in/mhooman" class="button">Follow Click</a></li>
-                </ul>
-            </div>
-            <div class="4u 12u$(medium)">
-                <span class="image fit"><img src="images/compute-engine_660.jpg" alt="" /></span>
-                <h3>Google Compute Engine</h3>
-                <p>I worked directly with research scientist <a href="https://www.cs.ubc.ca/~mpf/">Michael Friedlander</a> as research assistant. I was responsible to set up the cloud-based grid engine structure with master node and worker nodes. Most of the development of this project was done with Python and bash scripting. Our code was written on top of the Google Standard Library for Google Compute Engine. The distributed cloud clustering allows computational optimizations which can also be used in Decentralized Blockchain!</p>
-                <ul class="actions">
-                    <li><a href="https://github.com/hooman96/Google-Compute-Engine-Project" class="button">Project Repo</a></li>
-                </ul>
-            </div>
-            <div class="4u$ 12u$(medium)">
-                <span class="image fit"><img src="images/digit.png" alt="" /></span>
-                <h3>Digit Recognition</h3>
-                <p>I wrote MATLAB and Python code that can recognize hand-written digits using Machine Learning techniques. I used applications of linear algebra such as Singular Value Decomposition (SVD) as the core algorithm. This method was also used by the U.S. postal office to recognize hand-written addresses on mails. My paper below explains the project details and implementations.</p>
-                <ul class="actions">
-                    <li><a href="https://www.dropbox.com/s/kthlotxppudy92t/DigitRecognition.pdf?dl=0" class="button">Paper</a></li>
-                </ul>
-            </div>
-            <div class="4u 12u$(medium)">
-                <span class="image fit"><img src="images/swift-og.png" alt="" /></span>
-                <h3>Swift Shell</h3>
-                <p>I love collaboration and working in teams especially on open-source projects. Justin and I built an interactive Swift shell inside Swift playground for developers to use their favorite bash commands while developing Swift. This project is open source on GitHub and publishing this amazing tool in Apple Swift Library is on our roadmap.</p>
-                <ul class="actions">
-                    <li><a href="https://github.com/JustinJiaDev/SwiftShell" class="button">Play Swift Shell</a></li>
-                </ul>
-            </div>
-            <div class="4u 12u$(medium)">
-                <span class="image fit"><img src="images/file.png" alt="" /></span>
-                <h3>File Compression</h3>
-                <p>Fast, efficient and new algorithm using Huffman Tree encoding to manipulate the bits of any files and compress the size. The code base is in C/C++ and I collaborated on this project with a college classmate, Matthew Kotila. Our algorithm is significantly fast but we still would like to improve the performance with better speed, optimization and time complexity.</p>
-                <ul class="actions">
-                    <li><a href="https://github.com/hooman96/File-Compression" class="button">Code</a></li>
-                </ul>
-            </div>
-            <div class="4u$ 12u$(medium)">
-                <span class="image fit"><img src="images/wifi.png" alt="" /></span>
-                <h3>IEEE 802.11 Wireless LAN</h3>
-                <p>Wrote CSMA/CA (Carrier Sense Multiple Access with Collision Avoidance) Network Protocol with Discrete Event Simulations using negative exponential distribution of random variables. Markov Chain models were used to calculate the probability distributions and M/M/1 queue model for single server side. The client side is the command line where simulations can be customized. There is an additional technical README document on its GitHub page. I collaborated on this repo with Allen Speers</p>
-                <ul class="actions">
-                    <li><a href="https://github.com/hooman96/csma_ca_wlan" class="button">Simulate</a></li>
-                </ul>
-            </div>
+<!-- EXPERIENCE -->
+<section id="experience" aria-labelledby="exp-title">
+  <p class="slabel rv">02 — Experience</p>
+  <h2 class="stitle rv" id="exp-title">Where I've Worked</h2>
+  <ol class="expl" style="list-style:none;">
+
+    <li class="expi current rv" style="transition-delay:.05s">
+      <div class="expper">2025 — Present</div>
+      <div class="expdot" aria-hidden="true"></div>
+      <div>
+        <h3 class="expco"><a href="https://ai.meta.com" target="_blank" rel="noopener noreferrer">Meta AI</a></h3>
+        <div class="exprole">Senior Software Engineer · Technical Lead</div>
+        <p class="expdesc">Technical lead for agentic AI infrastructure processing 10M+ posts daily. Orchestrated post-training inference optimization pipelines spanning semantic search, vector-based document retrieval, and multi-modal image &amp; video compression. Architected defensive layers against prompt injection, tool misuse, and data exfiltration in agentic LLM workflows. Focused on memory efficiency, latency reduction, and real-time system-level performance analysis in high-throughput GPU environments.</p>
+        <div class="exptags">
+          <span class="tag">Post-Training</span><span class="tag">Inference Optimization</span><span class="tag">Multi-modal LLMs</span><span class="tag">Agentic AI</span><span class="tag">Prompt Defense</span><span class="tag">NVIDIA Triton</span><span class="tag">Vector Search</span><span class="tag">Python</span>
         </div>
-    </div>
+      </div>
+    </li>
+
+    <li class="expi rv" style="transition-delay:.1s">
+      <div class="expper">2023 — 2025</div>
+      <div class="expdot" aria-hidden="true"></div>
+      <div>
+        <h3 class="expco"><span>Momento AI</span></h3>
+        <div class="exprole">Founder · Technical Lead · CAIO</div>
+        <p class="expdesc">Founded and scaled a hybrid multi-cloud mapping and migration platform powered by open-source GenAI on a GPT-like interface. Built the full product from zero — managed a cross-functional team of PMs, UX designers, and engineers, growing the core team to 5. Full architecture ownership across Docker, Kubernetes, and Terraform spanning AWS, GCP, and Azure with SDKs in Python, Go, and Java.</p>
+        <div class="exptags">
+          <span class="tag">GenAI</span><span class="tag">LLM</span><span class="tag">Multi-Cloud</span><span class="tag">Kubernetes</span><span class="tag">Docker</span><span class="tag">Terraform</span><span class="tag">Python</span><span class="tag">Go</span>
+        </div>
+      </div>
+    </li>
+
+    <li class="expi rv" style="transition-delay:.15s">
+      <div class="expper">2022 — 2023</div>
+      <div class="expdot" aria-hidden="true"></div>
+      <div>
+        <h3 class="expco"><a href="https://aws.amazon.com" target="_blank" rel="noopener noreferrer">Amazon Web Services</a></h3>
+        <div class="exprole">SDE · Technical Lead · L5</div>
+        <p class="expdesc">Led design of fraudulent detection within in-house microservices as part of AI-driven payment initiatives. Achieved 75% latency optimization for payment transaction pagination serving global customers. Mentored a new hire and returning intern on technical skills and team best practices.</p>
+        <div class="exptags">
+          <span class="tag">Microservices</span><span class="tag">Fraud Detection</span><span class="tag">Latency Optimization</span><span class="tag">AI/ML</span><span class="tag">AWS</span><span class="tag">Java</span>
+        </div>
+      </div>
+    </li>
+
+    <li class="expi rv" style="transition-delay:.2s">
+      <div class="expper">2021 — 2022</div>
+      <div class="expdot" aria-hidden="true"></div>
+      <div>
+        <h3 class="expco"><a href="https://coinbase.com" target="_blank" rel="noopener noreferrer">Coinbase</a></h3>
+        <div class="exprole">Senior Software Engineer · Protocol Engineering</div>
+        <p class="expdesc">Reduced cost of customer nodes (Participation, Query &amp; Transact) by 40–60% for on-chain validators. Researched blockchain infrastructure across Zero Knowledge (ZKML), Bitcoin forks, and Tendermint protocol.</p>
+        <div class="exptags">
+          <span class="tag">Blockchain</span><span class="tag">ZKML</span><span class="tag">Tendermint</span><span class="tag">Go</span><span class="tag">Protocol Eng.</span>
+        </div>
+      </div>
+    </li>
+
+    <li class="expi rv" style="transition-delay:.25s">
+      <div class="expper">2020 — 2021</div>
+      <div class="expdot" aria-hidden="true"></div>
+      <div>
+        <h3 class="expco"><a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">TikTok</a></h3>
+        <div class="exprole">Software Engineer R&amp;D</div>
+        <p class="expdesc">Designed a data-driven system that increased external partnership throughput 5× to 50–100K QPS. Contributor and mentor on the identity graph and personalized ads recommendation engine at global scale.</p>
+        <div class="exptags">
+          <span class="tag">Recommendation Engine</span><span class="tag">Identity Graph</span><span class="tag">50-100K QPS</span><span class="tag">Ads ML</span><span class="tag">C++</span>
+        </div>
+      </div>
+    </li>
+
+    <li class="expi rv" style="transition-delay:.3s">
+      <div class="expper">2019 — 2020</div>
+      <div class="expdot" aria-hidden="true"></div>
+      <div>
+        <h3 class="expco"><a href="https://www.magicleap.com" target="_blank" rel="noopener noreferrer">Magic Leap</a></h3>
+        <div class="exprole">Machine Learning Engineer</div>
+        <p class="expdesc">Hardened backend services against OWASP Top 10 vulnerabilities. Designed a computer vision model using RCNN to detect and redact faces on Magic Leap One AR devices. Built secure shared cloud services to scale heavy spatial AR computations.</p>
+        <div class="exptags">
+          <span class="tag">RCNN</span><span class="tag">Computer Vision</span><span class="tag">AR/XR</span><span class="tag">Security</span><span class="tag">PyTorch</span>
+        </div>
+      </div>
+    </li>
+
+  </ol>
 </section>
 
-<section id="four" class="main style2 special">
-    <div class="container">
-        <div class="row 250%">
-            <div class="6u 12u$(medium)">
-                <header class="major">
-                    <h2>Hackathons & Competitions</h2>
-                </header>
-                <p>
-                    <!-- Santa Clara University Hackathon: Expedia for Philantropy <br /> <br /> -->
-                    0. Santa Clara University Hackathon: Expedia for Philanthropy <br /> <br />
-                    1. Piazza Hackathon Presentation at Palantir <br /> <br />
-                    2. HackingEDU Participant & Mentorship <br /> <br />
-                    3. UCD Team Member in <a href="http://acmicpc-pacnw.org/">ACM ICPC</a> Programming Competition<br /> <br />
-                    4. <a href="https://www.youtube.com/watch?v=1Jn7B8JvwqA&t=4s">Amazon Alexa Skill</a> w/ Google Calendar API Integration at <a href="https://hackdavis.io">HackDavis</a> <br /> <br />
-                    5. Internal Google Hackathon (GCP) & <a href="https://www.magicleap.com/en-us/news/op-ed/magicverse">MagicVerse</a> at Magic Leap HQ <br /> <br>
-                    6. <a href="https://docs.google.com/presentation/d/17zvDU1KgODXoE-8QPqXNJo-ag8c6-VMtmkwRV140iOo/edit#slide=id.p">Online</a> <a href="https://www.youtube.com/watch?v=BPEvdNKNXxQ&t=2s">Guest Speaker</a> for Lyvo Bootcamp during COVID-19 <br /> <br>
-                    7. <a href="https://www.youtube.com/watch?v=zhW5uE0YgxE&t=2s">Guest Speaker</a> for <a href="https://python.geekle.us/">Geekle Python Summit</a> on <a href="https://www.dropbox.com/s/vg2vms56idbjvb4/Hooman_Django_Intro.key?dl=0">Django</a> <br /> <br />
-                    8. Terra House UST grant recipient at <a href="https://www.miamihackweek.com">Miami Hack Week</a> <br /> <br />
-                    9. Kaggle Competition among UCD Machine Learning students </a> <br /> <br />
-                    10. Technology Management <a href="https://catalog.ucdavis.edu/departments-programs-degrees/graduate-school-management/technology-management-minor/#requirementstext">Minor</a> at Gradute School of Management </a> <br /> <br />
-                </p>
-            </div>
-            <div class="6u$ 12u$(large) important(large)">
-                <div class="row">
-                    <div class="6u$(medium)">
-                        <span class="image fit"><img src="images/piazza.jpg" alt="Piazza Hackathon Presentation at Palantir" title="Piazza Hackathon Presentation at Palantir"/></span>
-                    </div>
-                    <div class="6u$(medium)">
-                        <span class="image fit"><img src="images/hski.jpg" alt="Second Image" title="Second Image"/></span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+<!-- PROJECTS -->
+<section id="projects" aria-labelledby="proj-title">
+  <p class="slabel rv">03 — Projects</p>
+  <h2 class="stitle rv" id="proj-title">Things I've Built</h2>
+  <div class="pgrid">
+
+    <article class="pcard rv" style="transition-delay:.05s">
+      <div class="phead">
+        <div class="picon" aria-hidden="true">🧠</div>
+        <div class="plinks"><a href="https://github.com/hooman96" class="plnk" target="_blank" rel="noopener noreferrer" aria-label="Image Query on GitHub">GH</a></div>
+      </div>
+      <h3 class="pname">Image Query</h3>
+      <p class="pdesc">Deep learning visual search engine using k-means clustering and visual vocabulary correlations. Built a bag-of-words representation over CNN feature embeddings to enable content-based image retrieval at scale.</p>
+      <div class="ptags"><span class="ptag">Deep Learning</span><span class="ptag">k-Means</span><span class="ptag">CNN</span><span class="ptag">Python</span></div>
+    </article>
+
+    <article class="pcard rv" style="transition-delay:.1s">
+      <div class="phead">
+        <div class="picon" aria-hidden="true">🌐</div>
+        <div class="plinks"><a href="https://github.com/hooman96/hooman96.github.io/tree/master/pelpins" class="plnk" target="_blank" rel="noopener noreferrer" aria-label="Pelpins on GitHub">GH</a></div>
+      </div>
+      <h3 class="pname">Pelpins</h3>
+      <p class="pdesc">Personal web platform and full-stack UI project maintained as a git submodule within the portfolio codebase. Explores modular front-end architecture and component-driven design patterns.</p>
+      <div class="ptags"><span class="ptag">JavaScript</span><span class="ptag">CSS/SCSS</span><span class="ptag">HTML</span></div>
+    </article>
+
+    <article class="pcard rv" style="transition-delay:.15s">
+      <div class="phead">
+        <div class="picon" aria-hidden="true">📡</div>
+        <div class="plinks"><a href="https://github.com/hooman96" class="plnk" target="_blank" rel="noopener noreferrer" aria-label="WLAN on GitHub">GH</a></div>
+      </div>
+      <h3 class="pname">WLAN</h3>
+      <p class="pdesc">Parallel M/M/1 queue server simulation of CSMA/CA. Models wireless network behavior under variable load to analyze throughput, latency, and collision rates using queuing theory.</p>
+      <div class="ptags"><span class="ptag">Simulation</span><span class="ptag">Queuing Theory</span><span class="ptag">Networking</span><span class="ptag">C++</span></div>
+    </article>
+
+    <article class="pcard rv" style="transition-delay:.2s">
+      <div class="phead">
+        <div class="picon" aria-hidden="true">💻</div>
+        <div class="plinks"><a href="https://github.com/hooman96" class="plnk" target="_blank" rel="noopener noreferrer" aria-label="H Language on GitHub">GH</a></div>
+      </div>
+      <h3 class="pname">H Language</h3>
+      <p class="pdesc">Custom programming language with minimal syntax and functional programming semantics — built from scratch with its own lexer, parser, and interpreter. An exploration of PL theory and compiler design.</p>
+      <div class="ptags"><span class="ptag">PL Theory</span><span class="ptag">Interpreter</span><span class="ptag">Compiler</span><span class="ptag">Python</span></div>
+    </article>
+
+    <article class="pcard rv" style="transition-delay:.25s">
+      <div class="phead">
+        <div class="picon" aria-hidden="true">📊</div>
+        <div class="plinks"><a href="https://github.com/hooman96" class="plnk" target="_blank" rel="noopener noreferrer" aria-label="Credit Loan on GitHub">GH</a></div>
+      </div>
+      <h3 class="pname">Credit Loan</h3>
+      <p class="pdesc">Kaggle ML competition — trained an ensemble predictive model using gradient boosting and logistic regression to classify credit loan risk. Feature engineering, cross-validation, and hyperparameter tuning on real financial datasets.</p>
+      <div class="ptags"><span class="ptag">XGBoost</span><span class="ptag">Sklearn</span><span class="ptag">Feature Eng.</span><span class="ptag">Kaggle</span></div>
+    </article>
+
+    <article class="pcard rv" style="transition-delay:.3s">
+      <div class="phead">
+        <div class="picon" aria-hidden="true">🃏</div>
+        <div class="plinks"><a href="https://github.com/hooman96" class="plnk" target="_blank" rel="noopener noreferrer" aria-label="PPoker on GitHub">GH</a></div>
+      </div>
+      <h3 class="pname">PPoker</h3>
+      <p class="pdesc">App interface for poker admin and cashier tasks including game scenarios and chip management. Full UI for real-time game state tracking and session management for live poker games.</p>
+      <div class="ptags"><span class="ptag">JavaScript</span><span class="ptag">React</span><span class="ptag">Real-time UI</span></div>
+    </article>
+
+  </div>
 </section>
+
+<!-- SKILLS -->
+<section id="skills" aria-labelledby="skills-title">
+  <p class="slabel rv">04 — Skills</p>
+  <h2 class="stitle rv" id="skills-title">Tech Stack</h2>
+  <div class="skwrap">
+
+    <div class="skcat rv" style="transition-delay:.05s">
+      <div class="skh"><div class="skih" aria-hidden="true">🤖</div><h3 class="sknm">LLM &amp; AI Systems</h3></div>
+      <div class="skp">
+        <span class="pill h">Pre-Training</span><span class="pill h">Post-Training / RLHF</span><span class="pill h">Inference Optimization</span><span class="pill h">Agentic AI</span><span class="pill">Multi-modal LLMs</span><span class="pill">Prompt Injection Defense</span><span class="pill">RAG / Semantic Search</span><span class="pill">Fine-tuning / PEFT</span><span class="pill">LoRA / QLoRA</span><span class="pill">Tool Misuse Defense</span>
+      </div>
+    </div>
+
+    <div class="skcat rv" style="transition-delay:.1s">
+      <div class="skh"><div class="skih" aria-hidden="true">⚡</div><h3 class="sknm">ML Infrastructure</h3></div>
+      <div class="skp">
+        <span class="pill h">NVIDIA Triton</span><span class="pill h">TensorRT</span><span class="pill h">vLLM</span><span class="pill h">Real-time Perf. Analysis</span><span class="pill">Model Scaling in Prod</span><span class="pill">GPU Memory Optimization</span><span class="pill">Latency Profiling</span><span class="pill">PyTorch</span><span class="pill">ONNX</span><span class="pill">SageMaker</span><span class="pill">Flash Attention</span>
+      </div>
+    </div>
+
+    <div class="skcat rv" style="transition-delay:.15s">
+      <div class="skh"><div class="skih" aria-hidden="true">🖥</div><h3 class="sknm">Languages</h3></div>
+      <div class="skp">
+        <span class="pill h">Python</span><span class="pill h">Go</span><span class="pill">C / C++</span><span class="pill">Java</span><span class="pill">JavaScript</span><span class="pill">SQL</span>
+      </div>
+    </div>
+
+    <div class="skcat rv" style="transition-delay:.2s">
+      <div class="skh"><div class="skih" aria-hidden="true">☁️</div><h3 class="sknm">Cloud &amp; Infrastructure</h3></div>
+      <div class="skp">
+        <span class="pill h">AWS</span><span class="pill">GCP</span><span class="pill">Kubernetes</span><span class="pill">Docker</span><span class="pill">Terraform</span><span class="pill">Kafka</span><span class="pill">Redis</span><span class="pill">Microservices</span>
+      </div>
+    </div>
+
+    <div class="skcat rv" style="transition-delay:.25s">
+      <div class="skh"><div class="skih" aria-hidden="true">🧬</div><h3 class="sknm">ML / Data Science</h3></div>
+      <div class="skp">
+        <span class="pill">Computer Vision</span><span class="pill">RCNN / CNNs</span><span class="pill">NLP / Transformers</span><span class="pill">Recommendation Systems</span><span class="pill">Vector Databases</span><span class="pill">XGBoost</span><span class="pill">Random Forest</span><span class="pill">Brain Tumor Segmentation</span>
+      </div>
+    </div>
+
+    <div class="skcat rv" style="transition-delay:.3s">
+      <div class="skh"><div class="skih" aria-hidden="true">🔐</div><h3 class="sknm">Security &amp; Reliability</h3></div>
+      <div class="skp">
+        <span class="pill h">Prompt Injection Defense</span><span class="pill h">Data Exfiltration Prevention</span><span class="pill">OWASP Top 10</span><span class="pill">Fraud Detection</span><span class="pill">Zero Knowledge (ZKML)</span><span class="pill">Blockchain Protocol</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- RESEARCH & ADVISING -->
+<section id="research" aria-labelledby="research-title">
+  <p class="slabel rv">05 — Research &amp; Advising</p>
+  <h2 class="stitle rv" id="research-title">Beyond Engineering</h2>
+  <div class="rgrid">
+
+    <article class="rcard rv" style="transition-delay:.05s">
+      <div class="rtag">📄 Publication · UW Kurtlab · 2024</div>
+      <h3 class="rtitle">Ensemble Approach for Brain Tumor Segmentation and Synthesis</h3>
+      <p class="rdesc">Deep learning ensemble model for accurate volumetric segmentation of brain tumors using the BraTS dataset — combining multiple architectures to improve precision across tumor sub-regions.</p>
+      <div class="ryear">University of Washington · BraTS · PyTorch · Medical Imaging</div>
+    </article>
+
+    <article class="rcard rv" style="transition-delay:.1s">
+      <div class="rtag">🏥 AI Advisor · March Health · 2024–2025</div>
+      <h3 class="rtitle">AI for Early Endometriosis Diagnosis via Digital Twins</h3>
+      <p class="rdesc">Founding Partner and AI Advisor. Directed technical strategy for a platform using digital twins and health agents for early endometriosis diagnosis. Advised leadership on applied LLM, RL, and medical ML.</p>
+      <div class="ryear">March Health · Los Angeles, CA · LLM + RL · Health Agents</div>
+    </article>
+
+    <article class="rcard rv" style="transition-delay:.15s">
+      <div class="rtag">🧬 Founding Engineer · 310.ai · 2020–2021</div>
+      <h3 class="rtitle">Generative AI Infrastructure for Biotech</h3>
+      <p class="rdesc">Built generative AI systems and infrastructure for Biotech companies using Transformers, NLP, and early LLM architectures — one of the earliest production applications of large language models in life sciences.</p>
+      <div class="ryear">310.ai · Transformers · NLP · LLMs · Biotech</div>
+    </article>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" aria-labelledby="contact-title">
+  <div class="ctwrap rv">
+    <p class="slabel">06 — Contact</p>
+    <h2 class="cttitle" id="contact-title">Let's Build<br>Something<br><span class="ac">Remarkable.</span></h2>
+    <p class="ctsub">Open to senior engineering and staff roles, AI infrastructure opportunities, research collaborations, and advisory conversations. Bay Area based — let's connect.</p>
+    <div class="ctlinks">
+      <a href="mailto:hooistheman@gmail.com" class="ctlnk">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+        hooistheman@gmail.com
+      </a>
+      <a href="https://www.linkedin.com/in/hooistheman" class="ctlnk" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        linkedin.com/in/hooistheman
+      </a>
+      <a href="https://github.com/hooman96" class="ctlnk" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+        github.com/hooman96
+      </a>
+      <a href="https://scholar.google.com/citations?user=749Bi3UAAAAJ" class="ctlnk" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M12 14l9-5-9-5-9 5 9 5z"/><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+        Google Scholar
+      </a>
+      <a href="https://hooistheman.vercel.app" class="ctlnk" target="_blank" rel="noopener noreferrer">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9"/></svg>
+        hooistheman.vercel.app
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
 
 <footer>
-    <section id="footer">
-        <div class="container">
-            <header class="major">
-                <h2>Contact Info</h2>
-            </header>
-            <p>I would like to hear from you; meanwhile, feel free to listen to my song :)</p>
-            <audio id="classical_guitar" controls controlsList="nodownload">
-                <source src="audio/soog.mp3" type="audio/mpeg">
-            </audio>
-            <p></p>
-            <h3> <a href="https://github.com/hooman96/hooman96.github.io/blob/master/README.md">Resume Preview</a> </h3>
-            <p></p>
-            <form method="post" action="mailto:mDOThoomanATicloudDOTcom" onclick="this.action=this.action.replace(/DOT/,'.').replace(/AT/,'@').replace(/DOT/,'.')">
-                <input type="submit" value="Email me: hooistheman [at] gmail [dot] com" />
-            </form>
-        </div>
-        <ul class="icons">
-            <li><a href="https://www.facebook.com/hooman74" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
-            <li><a href="https://www.instagram.com/hooistheman" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
-            <li><a href="https://www.twitter.com/hooistheman" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
-            <li><a href="https://www.linkedin.com/in/mhooman" class="icon alt fa-linkedin"><span class="label">LinkedIn</span></a></li>
-            <li><a href="https://github.com/hooman96" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
-            <li><a href="https://medium.com/@hoomanmo" class="icon alt fa-medium"><span class="label">Medium</span></a></li>
-            <li><a href="https://www.youtube.com/channel/UClLZS7hLR2HojAxVQtriVWg/" class="icon alt fa-youtube"><span class="label">YouTube Channel</span></a></li>
-            <li><a href="https://www.quora.com/profile/Hooman-Mohammadi-2" class="icon fa fa-question" aria-hidden="true"><span class="label">Quora</span></a></li>
-            <li><a href="https://hooistheman.wordpress.com/" class="icon fab fa-wordpress"><span class="label">Blog</span></a></li>
-            <li><a href="https://hooman96.github.io/pelpins/" class="icon fab fa-rss"><span class="label">Tech</span></a></li>
-            <li><a href="https://hooman96.github.io/NFT/" class="icon fab fa-heart"><span class="label">NFT</span></a></li>
-            <li><a href="https://hooistheman.substack.com/" class="icon fab fa-book"><span class="label">Substack</span></a></li>
-            <!-- <li><a href="https://hooman96.github.io/namaayesh/" class="icon fab fa-book"><span class="label">Clubhouse</span></a></li> -->
-        </ul>
-        <ul class="copyright">
-            <li>&copy; Hooman Mohammadi</li>
-        </ul>
-    </section>
+  <p class="ftc">Hooman Mohammadi · Senior AI/ML Engineer</p>
+  <p class="ftn">M.S. Georgia Tech · B.S. UC Davis · <span>Meta AI</span> · 2025</p>
 </footer>
+
+<script>
+  // Replace no-js class with js so progressive-enhancement reveal animations activate.
+  document.body.classList.remove('no-js');
+
+  // Respect reduced-motion preference.
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Custom cursor — only on fine pointer devices.
+  const finePointer = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
+  if (finePointer && !reduceMotion) {
+    const cur = document.getElementById('cur');
+    const curR = document.getElementById('curR');
+    let rx = 0, ry = 0, cx = 0, cy = 0;
+    document.addEventListener('mousemove', e => { cx = e.clientX; cy = e.clientY; });
+    (function loop(){
+      rx += (cx - rx) * .16;
+      ry += (cy - ry) * .16;
+      cur.style.left = cx + 'px';
+      cur.style.top = cy + 'px';
+      curR.style.left = rx + 'px';
+      curR.style.top = ry + 'px';
+      requestAnimationFrame(loop);
+    })();
+  } else {
+    // Hide custom cursor elements entirely on touch devices.
+    const c1 = document.getElementById('cur');
+    const c2 = document.getElementById('curR');
+    if (c1) c1.style.display = 'none';
+    if (c2) c2.style.display = 'none';
+  }
+
+  // Sticky-nav scroll state.
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('sc', window.scrollY > 60);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+
+  // Reveal-on-scroll.
+  const rvEls = document.querySelectorAll('.rv');
+  if ('IntersectionObserver' in window && !reduceMotion) {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('on');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: .1, rootMargin: '0px 0px -35px 0px' });
+    rvEls.forEach(el => io.observe(el));
+  } else {
+    // Fallback: just show everything.
+    rvEls.forEach(el => el.classList.add('on'));
+  }
+
+  // Typed text effect in hero.
+  const typedEl = document.getElementById('typed');
+  if (typedEl && !reduceMotion) {
+    const phrases = [
+      'Post-training · inference optimization at scale.',
+      'Agentic LLMs processing 10M+ posts/day.',
+      'NVIDIA Triton · vLLM · real-time perf. analysis.',
+      'Prompt injection defense · data exfiltration prevention.',
+      'Meta AI · Technical Lead.'
+    ];
+    let pi = 0, ci = 0, deleting = false;
+    function tick() {
+      const phrase = phrases[pi];
+      if (!deleting) {
+        typedEl.textContent = phrase.slice(0, ++ci);
+        if (ci === phrase.length) {
+          deleting = true;
+          setTimeout(tick, 1900);
+          return;
+        }
+        setTimeout(tick, 40);
+      } else {
+        typedEl.textContent = phrase.slice(0, --ci);
+        if (ci === 0) {
+          deleting = false;
+          pi = (pi + 1) % phrases.length;
+          setTimeout(tick, 350);
+          return;
+        }
+        setTimeout(tick, 20);
+      }
+    }
+    setTimeout(tick, 1000);
+  } else if (typedEl) {
+    // Reduced motion: just show the first phrase, no animation.
+    typedEl.textContent = 'Post-training · inference optimization at scale.';
+  }
+</script>
+</body>
+</html>
