@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="A high-level AI learning roadmap from Hooman Mohammadi: languages, tools, concepts, and courses for non-technical and technical audiences.">
+<meta name="description" content="A high-level AI learning roadmap from Hooman Mohammadi: languages, tools, concepts and courses for non-technical and technical audiences, plus an LLM expert track covering training, post-training and inference systems.">
 <meta name="author" content="Hooman Mohammadi">
 <meta name="theme-color" content="#05070f">
 
 <meta property="og:type" content="article">
 <meta property="og:title" content="AI Learning Roadmap — Hooman Mohammadi">
-<meta property="og:description" content="What to learn to work with AI in the agentic era. Two tracks: non-technical and technical.">
+<meta property="og:description" content="What to learn to work with AI in the agentic era. Three tracks: non-technical, technical and LLM expert.">
 <meta property="og:url" content="https://hooistheman.vercel.app/guides">
 
 <title>AI Learning Roadmap — Hooman Mohammadi</title>
@@ -152,6 +152,10 @@
   .sub li::before{content:'';position:absolute;left:0;top:.72em;width:6px;height:1px;background:var(--blue);opacity:.7;}
   .sub li b{color:var(--text);font-weight:500;}
   .sub li .arrow{color:var(--dim);margin:0 .35rem;}
+  .sub li a{color:var(--text);text-decoration:none;border-bottom:1px solid rgba(0,129,251,.35);transition:color .2s,border-color .2s;}
+  .sub li a:hover{color:var(--blue);border-color:var(--blue);}
+  .sub li a::after{content:'↗';font-family:var(--mono);font-size:.7em;margin-left:.3em;color:var(--blue);}
+  .track-h p a{color:var(--blue);text-decoration:none;border-bottom:1px solid rgba(0,129,251,.35);}
   .ick:checked ~ .sub{opacity:.5;}
 
   /* chip grid for compact lists */
@@ -181,7 +185,7 @@
 
   @media (max-width:960px){
     .layout{grid-template-columns:1fr;gap:2rem;}
-    aside{position:static;}
+    aside{position:static;min-width:0;}
     .toc{flex-direction:row;flex-wrap:nowrap;overflow-x:auto;gap:.5rem;padding-bottom:.4rem;scrollbar-width:none;}
     .toc::-webkit-scrollbar{display:none;}
     .toc a{border:1px solid var(--border);border-radius:20px;white-space:nowrap;padding:.45rem .9rem;font-size:.82rem;}
@@ -204,7 +208,9 @@
   }
   @media (max-width:520px){
     .navl li.hm{display:none;}
-    .seg button{padding:.55rem .8rem;font-size:.64rem;}
+    .seg{max-width:100%;overflow-x:auto;scrollbar-width:none;}
+    .seg::-webkit-scrollbar{display:none;}
+    .seg button{padding:.55rem .7rem;font-size:.6rem;white-space:nowrap;}
     .prog{width:100%;justify-content:space-between;}
   }
 </style>
@@ -242,6 +248,7 @@
     <div class="seg" role="tablist" aria-label="Audience track">
       <button role="tab" id="tab-nt" aria-selected="true" aria-controls="non-technical" data-track="non-technical">Non-technical <span class="cnt" data-cnt="non-technical"></span></button>
       <button role="tab" id="tab-t" aria-selected="false" aria-controls="technical" data-track="technical">Technical <span class="cnt" data-cnt="technical"></span></button>
+      <button role="tab" id="tab-le" aria-selected="false" aria-controls="llm-expert" data-track="llm-expert">LLM expert <span class="cnt" data-cnt="llm-expert"></span></button>
     </div>
     <div class="prog" aria-live="polite">
       <span>Progress</span>
@@ -258,7 +265,7 @@
     <aside aria-label="On this page">
       <p class="toc-h">On this track</p>
       <ul class="toc" id="toc"></ul>
-      <p class="toc-foot">Tip: press <kbd>1</kbd> or <kbd>2</kbd> to switch tracks. Click a row to mark it done.</p>
+      <p class="toc-foot">Tip: press <kbd>1</kbd>, <kbd>2</kbd> or <kbd>3</kbd> to switch tracks. Click a row to mark it done.</p>
     </aside>
 
     <div class="content">
@@ -550,6 +557,439 @@
         </article>
       </section>
 
+      <!-- ============================ LLM EXPERT ============================ -->
+      <section class="track" id="llm-expert" role="tabpanel" aria-labelledby="tab-le" hidden>
+        <div class="track-h">
+          <p class="slabel">Track 03</p>
+          <h2>LLM expert</h2>
+          <p>For people who build, train or serve models. Each topic maps to a component in the <a href="/llm-atlas">LLM Atlas</a>, where you can rotate the whole system, follow a lifecycle mode and run the simulations.</p>
+        </div>
+
+        <article class="cat" id="le-data" data-cat>
+          <div class="cat-h">
+            <div class="cat-ic" aria-hidden="true">🧾</div>
+            <div><span class="cat-n">01 · Data &amp; tokenization</span><h3>Data &amp; tokenization</h3></div>
+            <span class="done" data-done></span>
+          </div>
+          <ol class="items">
+            <li class="item">
+              <input type="checkbox" class="ick" id="le-data-1">
+              <label class="irow" for="le-data-1">
+                <span class="box"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg></span>
+                <span class="num">01</span>
+                <span class="ttl">Corpora &amp; governance<small>Where training data comes from, what you are allowed to use, and how provenance is tracked.</small></span>
+              </label>
+              <ul class="sub">
+                <li><b>Licensing, opt-outs, takedowns</b></li>
+                <li><b>Mixture weighting</b>: which sources get upsampled and why.</li>
+              </ul>
+            </li>
+            <li class="item">
+              <input type="checkbox" class="ick" id="le-data-2">
+              <label class="irow" for="le-data-2">
+                <span class="box"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg></span>
+                <span class="num">02</span>
+                <span class="ttl">Filtering, deduplication, contamination<small>Most of the quality of a base model is decided here.</small></span>
+              </label>
+              <ul class="sub">
+                <li><b>Quality filters</b>: heuristic rules and classifiers.</li>
+                <li><b>Exact + fuzzy dedup</b>: hashing, MinHash / LSH.</li>
+                <li><b>PII and secret scrubbing</b></li>
+                <li><b>Benchmark contamination checks</b>: n-gram overlap against evals.</li>
+              </ul>
+            </li>
+            <li class="item">
+              <input type="checkbox" class="ick" id="le-data-3">
+              <label class="irow" for="le-data-3">
+                <span class="box"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg></span>
+                <span class="num">03</span>
+                <span class="ttl">Tokenizers<small>String → ids. Not a neural network, but it sets the cost of everything downstream.</small></span>
+              </label>
+              <ul class="sub">
+                <li><b>BPE vs unigram / SentencePiece</b>, vocabulary size, byte fallback.</li>
+                <li><b>Tokenizer decode vs generation decode</b>: two different things called “decode”.</li>
+                <li><a href="/llm-atlas#scope-tokenizer">Atlas: encode → prefill → decode walkthrough</a></li>
+              </ul>
+            </li>
+            <li class="item">
+              <input type="checkbox" class="ick" id="le-data-4">
+              <label class="irow" for="le-data-4">
+                <span class="box"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg></span>
+                <span class="num">04</span>
+                <span class="ttl">Packing &amp; sharding<small>Turning documents into fixed-length training sequences that many loaders can read in parallel.</small></span>
+              </label>
+            </li>
+          </ol>
+        </article>
+
+        <article class="cat" id="le-transformer" data-cat>
+          <div class="cat-h">
+            <div class="cat-ic" aria-hidden="true">🧩</div>
+            <div><span class="cat-n">02 · Transformer internals</span><h3>Transformer internals</h3></div>
+            <span class="done" data-done></span>
+          </div>
+          <ol class="items">
+            <li class="item">
+              <input type="checkbox" class="ick" id="le-tf-1">
+              <label class="irow" for="le-tf-1">
+                <span class="box"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg></span>
+                <span class="num">01</span>
+                <span class="ttl">Embeddings &amp; position<small>Token embeddings, RoPE, and how context length extension works.</small></span>
+              </label>
+            </li>
+            <li class="item">
+              <input type="checkbox" class="ick" id="le-tf-2">
+              <label class="irow" for="le-tf-2">
+                <span class="box"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg></span>
+                <span class="num">02</span>
+                <span class="ttl">Attention<small>Q/K/V projections, causal masking, and why the number of KV heads matters for serving.</small></span>
+              </label>
+              <ul class="sub">
+                <li><b>MHA vs GQA vs MQA</b></li>
+                <li><b>FlashAttention</b>: exact attention with less memory traffic, not a different objective.</li>
+                <li><a href="/llm-atlas#scope-transformer">Atlas: decoder block explorer</a></li>
+              </ul>
+            </li>
+            <li class="item">
+              <input type="checkbox" class="ick" id="le-tf-3">
+              <label class="irow" for="le-tf-3">
+                <span class="box"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg></span>
+                <span class="num">03</span>
+                <span class="ttl">Residual stream, norms, MLP<small>Pre-norm RMSNorm, SwiGLU, and the shared vector every layer reads from and adds to.</small></span>
+              </label>
+            </li>
+            <li class="item">
+              <input type="checkbox" class="ick" id="le-tf-4">
+              <label class="irow" for="le-tf-4">
+                <span class="box"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg></span>
+                <span class="num">04</span>
+                <span class="ttl">LM head &amp; logits<small>Training uses every position; decoding only needs the last one.</small></span>
+              </label>
+            </li>
+          </ol>
+        </article>
+
+        <article class="cat" id="le-moe" data-cat>
+          <div class="cat-h">
+            <div class="cat-ic" aria-hidden="true">🔀</div>
+            <div><span class="cat-n">03 · Mixture of experts</span><h3>Mixture of experts</h3></div>
+            <span class="done" data-done></span>
+          </div>
+          <ol class="items">
+            <li class="item">
+              <input type="checkbox" class="ick" id="le-moe-1">
+              <label class="irow" for="le-moe-1">
+                <span class="box"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg></span>
+                <span class="num">01</span>
+                <span class="ttl">Routing<small>Router logits, top-k selection, permutation, dispatch, weighted combine.</small></span>
+              </label>
+              <ul class="sub">
+                <li><b>Total vs active parameters</b>: capacity grows with experts, per-token compute with k.</li>
+                <li><a href="/llm-atlas#scope-moe">Atlas: MoE router simulator</a></li>
+              </ul>
+            </li>
+            <li class="item">
+              <input type="checkbox" class="ick" id="le-moe-2">
+              <label class="irow" for="le-moe-2">
+                <span class="box"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg></span>
+                <span class="num">02</span>
+                <span class="ttl">Load balancing<small>Capacity factors, auxiliary losses, bias adjustment, and what happens to dropped tokens.</small></span>
+              </label>
+            </li>
+            <li class="item">
+              <input type="checkbox" class="ick" id="le-moe-3">
+              <label class="irow" for="le-moe-3">
+                <span class="box"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg></span>
+                <span class="num">03</span>
+                <span class="ttl">Expert parallelism<small>Experts live on different devices; all-to-all communication is the cost.</small></span>
+              </label>
+              <ul class="sub">
+                <li><b>EP vs TP</b>: whole experts vs sliced matrices.</li>
+                <li><b>Placement and hot-expert replication</b></li>
+              </ul>
+            </li>
+          </ol>
+        </article>
+
+        <article class="cat" id="le-pretrain" data-cat>
+          <div class="cat-h">
+            <div class="cat-ic" aria-hidden="true">🏋️</div>
+            <div><span class="cat-n">04 · Pre-training at scale</span><h3>Pre-training at scale</h3></div>
+            <span class="done" data-done></span>
+          </div>
+          <ol class="items">
+            <li class="item">
+              <input type="checkbox" class="ick" id="le-pt-1">
+              <label class="irow" for="le-pt-1">
+                <span class="box"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg></span>
+                <span class="num">01</span>
+                <span class="ttl">One training step<small>Forward, shifted labels, cross-entropy, backward, gradient collectives, AdamW.</small></span>
+              </label>
+              <ul class="sub">
+                <li><b>Global batch, microbatch, gradient accumulation</b></li>
+                <li><b>Mixed precision</b>: BF16 / FP16 / FP8 and the ~16 bytes per parameter that come with AdamW.</li>
+                <li><b>Gradient clipping, warmup, weight decay</b></li>
+                <li><a href="/llm-atlas#scope-training">Atlas: training-step calculator</a></li>
+              </ul>
+            </li>
+            <li class="item">
+              <input type="checkbox" class="ick" id="le-pt-2">
+              <label class="irow" for="le-pt-2">
+                <span class="box"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg></span>
+                <span class="num">02</span>
+                <span class="ttl">Parallelism strategies<small>Each one partitions a different dimension; real systems compose several.</small></span>
+              </label>
+              <ul class="sub">
+                <li><b>DP</b> batch <span class="arrow">·</span> <b>TP</b> tensors <span class="arrow">·</span> <b>PP</b> depth <span class="arrow">·</span> <b>CP</b> sequence <span class="arrow">·</span> <b>EP</b> experts <span class="arrow">·</span> <b>FSDP / ZeRO</b> optimizer state</li>
+                <li><a href="/llm-atlas#scope-parallelism">Atlas: 8-GPU parallelism explorer</a></li>
+              </ul>
+            </li>
+            <li class="item">
+              <input type="checkbox" class="ick" id="le-pt-3">
+              <label class="irow" for="le-pt-3">
+                <span class="box"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg></span>
+                <span class="num">03</span>
+                <span class="ttl">Memory &amp; efficiency<small>Activation checkpointing, MFU, data-loader stalls, network bottlenecks.</small></span>
+              </label>
+            </li>
+            <li class="item">
+              <input type="checkbox" class="ick" id="le-pt-4">
+              <label class="irow" for="le-pt-4">
+                <span class="box"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg></span>
+                <span class="num">04</span>
+                <span class="ttl">Checkpointing &amp; recovery<small>Sharded, asynchronous saves that include optimizer state and loader position.</small></span>
+              </label>
+            </li>
+          </ol>
+        </article>
+
+        <article class="cat" id="le-posttrain" data-cat>
+          <div class="cat-h">
+            <div class="cat-ic" aria-hidden="true">🎯</div>
+            <div><span class="cat-n">05 · Post-training</span><h3>Post-training</h3></div>
+            <span class="done" data-done></span>
+          </div>
+          <ol class="items">
+            <li class="item">
+              <input type="checkbox" class="ick" id="le-po-1">
+              <label class="irow" for="le-po-1">
+                <span class="box"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg></span>
+                <span class="num">01</span>
+                <span class="ttl">SFT &amp; the annotation pipeline<small>Taxonomy, rubrics, calibration, agreement, adjudication, chat template, loss masking.</small></span>
+              </label>
+              <ul class="sub">
+                <li><b>Quality vs quantity</b>, model-assisted and synthetic demonstrations.</li>
+                <li><b>Catastrophic forgetting</b> and replay mixing.</li>
+                <li><a href="/llm-atlas#scope-posttraining">Atlas: SFT pipeline</a></li>
+              </ul>
+            </li>
+            <li class="item">
+              <input type="checkbox" class="ick" id="le-po-2">
+              <label class="irow" for="le-po-2">
+                <span class="box"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg></span>
+                <span class="num">02</span>
+                <span class="ttl">LoRA &amp; QLoRA<small>W′ = W + (α/r)·B·A. Cheap to train and store; not automatically faster to serve.</small></span>
+              </label>
+            </li>
+            <li class="item">
+              <input type="checkbox" class="ick" id="le-po-3">
+              <label class="irow" for="le-po-3">
+                <span class="box"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg></span>
+                <span class="num">03</span>
+                <span class="ttl">Preference optimization<small>Same pairs, two paths: reward model + PPO-style RLHF, or DPO-family losses.</small></span>
+              </label>
+              <ul class="sub">
+                <li><b>Reference policy and KL regularization</b></li>
+                <li><b>Reward hacking, verbosity bias, judge bias, sycophancy, over-refusal</b></li>
+              </ul>
+            </li>
+            <li class="item">
+              <input type="checkbox" class="ick" id="le-po-4">
+              <label class="irow" for="le-po-4">
+                <span class="box"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg></span>
+                <span class="num">04</span>
+                <span class="ttl">Safety, red teaming, evaluation<small>Held-out human evals, LLM-as-judge with its biases, contamination control.</small></span>
+              </label>
+            </li>
+          </ol>
+        </article>
+
+        <article class="cat" id="le-inference" data-cat>
+          <div class="cat-h">
+            <div class="cat-ic" aria-hidden="true">⚡</div>
+            <div><span class="cat-n">06 · Inference engine</span><h3>Inference engine</h3></div>
+            <span class="done" data-done></span>
+          </div>
+          <ol class="items">
+            <li class="item">
+              <input type="checkbox" class="ick" id="le-inf-1">
+              <label class="irow" for="le-inf-1">
+                <span class="box"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg></span>
+                <span class="num">01</span>
+                <span class="ttl">Prefill vs decode<small>One parallel pass that sets TTFT, then a bandwidth-bound loop that sets inter-token latency.</small></span>
+              </label>
+              <ul class="sub">
+                <li><b>Chunked prefill</b>: keep decodes responsive while long prompts arrive.</li>
+                <li><a href="/llm-atlas#scope-batching">Atlas: batching visualizer</a></li>
+              </ul>
+            </li>
+            <li class="item">
+              <input type="checkbox" class="ick" id="le-inf-2">
+              <label class="irow" for="le-inf-2">
+                <span class="box"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg></span>
+                <span class="num">02</span>
+                <span class="ttl">KV cache &amp; paged memory<small>2 × layers × tokens × KV heads × head dim × bytes, per sequence.</small></span>
+              </label>
+              <ul class="sub">
+                <li><b>PagedAttention-style block tables</b>, fragmentation, eviction, offloading.</li>
+                <li><b>KV-cache quantization</b> (distinct from weight quantization).</li>
+                <li><a href="/llm-atlas#scope-kv">Atlas: KV cache calculator</a></li>
+              </ul>
+            </li>
+            <li class="item">
+              <input type="checkbox" class="ick" id="le-inf-3">
+              <label class="irow" for="le-inf-3">
+                <span class="box"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg></span>
+                <span class="num">03</span>
+                <span class="ttl">Prefix caching<small>Cross-request reuse of prompt-prefix KV blocks. Cuts prefill; does not touch decode.</small></span>
+              </label>
+              <ul class="sub">
+                <li><a href="/llm-atlas#scope-prefix">Atlas: prefix cache simulator</a></li>
+              </ul>
+            </li>
+            <li class="item">
+              <input type="checkbox" class="ick" id="le-inf-4">
+              <label class="irow" for="le-inf-4">
+                <span class="box"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg></span>
+                <span class="num">04</span>
+                <span class="ttl">Continuous batching<small>Batch membership changes at every decode iteration. Not the same as dynamic batching.</small></span>
+              </label>
+            </li>
+            <li class="item">
+              <input type="checkbox" class="ick" id="le-inf-5">
+              <label class="irow" for="le-inf-5">
+                <span class="box"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg></span>
+                <span class="num">05</span>
+                <span class="ttl">Decoding policies &amp; speculative decoding<small>Greedy, sampling, beam, structured; then draft + verify for cheaper tokens.</small></span>
+              </label>
+              <ul class="sub">
+                <li><b>Speedup depends on</b> draft cost, candidate length, acceptance rate, batch size.</li>
+                <li><a href="/llm-atlas#scope-decoding">Atlas: speculative decoding visualizer</a></li>
+              </ul>
+            </li>
+            <li class="item">
+              <input type="checkbox" class="ick" id="le-inf-6">
+              <label class="irow" for="le-inf-6">
+                <span class="box"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg></span>
+                <span class="num">06</span>
+                <span class="ttl">Quantization<small>BF16 → FP8 → INT8 → INT4. Smaller weights, not proportionally faster.</small></span>
+              </label>
+              <ul class="sub">
+                <li><b>Weight-only vs weight + activation</b>, calibration, GPTQ / AWQ style, QAT.</li>
+                <li><a href="/llm-atlas#scope-quant">Atlas: weight memory calculator</a></li>
+              </ul>
+            </li>
+          </ol>
+        </article>
+
+        <article class="cat" id="le-serving" data-cat>
+          <div class="cat-h">
+            <div class="cat-ic" aria-hidden="true">📡</div>
+            <div><span class="cat-n">07 · Serving &amp; observability</span><h3>Serving &amp; observability</h3></div>
+            <span class="done" data-done></span>
+          </div>
+          <ol class="items">
+            <li class="item">
+              <input type="checkbox" class="ick" id="le-srv-1">
+              <label class="irow" for="le-srv-1">
+                <span class="box"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg></span>
+                <span class="num">01</span>
+                <span class="ttl">The serving plane<small>Gateway → model router → queue / admission → worker → stream → telemetry.</small></span>
+              </label>
+            </li>
+            <li class="item">
+              <input type="checkbox" class="ick" id="le-srv-2">
+              <label class="irow" for="le-srv-2">
+                <span class="box"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg></span>
+                <span class="num">02</span>
+                <span class="ttl">Parallel &amp; disaggregated inference<small>TP / PP / EP at serving time, and separate prefill and decode pools with KV transfer in between.</small></span>
+              </label>
+            </li>
+            <li class="item">
+              <input type="checkbox" class="ick" id="le-srv-3">
+              <label class="irow" for="le-srv-3">
+                <span class="box"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg></span>
+                <span class="num">03</span>
+                <span class="ttl">Fleet operations<small>Multi-LoRA, token-aware autoscaling, backpressure, canary releases, CUDA Graphs and compiled kernels.</small></span>
+              </label>
+            </li>
+            <li class="item">
+              <input type="checkbox" class="ick" id="le-srv-4">
+              <label class="irow" for="le-srv-4">
+                <span class="box"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg></span>
+                <span class="num">04</span>
+                <span class="ttl">Metrics that matter<small>Queue time, TTFT, TPOT / ITL, throughput, KV utilization, prefix hit rate, batch occupancy, cost per task.</small></span>
+              </label>
+              <ul class="sub">
+                <li><b>GPU utilization</b> only means something next to memory bandwidth, kernel occupancy and communication.</li>
+                <li><a href="/llm-atlas#scope-serving">Atlas: metrics glossary</a></li>
+              </ul>
+            </li>
+          </ol>
+        </article>
+
+        <article class="cat" id="le-reading" data-cat>
+          <div class="cat-h">
+            <div class="cat-ic" aria-hidden="true">📚</div>
+            <div><span class="cat-n">08 · Primary sources</span><h3>Primary sources</h3></div>
+            <span class="done" data-done></span>
+          </div>
+          <ol class="items">
+            <li class="item">
+              <input type="checkbox" class="ick" id="le-read-1">
+              <label class="irow" for="le-read-1">
+                <span class="box"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg></span>
+                <span class="num">01</span>
+                <span class="ttl">Architecture<small>The papers behind the block.</small></span>
+              </label>
+              <ul class="sub">
+                <li><a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener noreferrer">Attention Is All You Need</a></li>
+                <li><a href="https://arxiv.org/abs/2205.14135" target="_blank" rel="noopener noreferrer">FlashAttention</a></li>
+                <li><a href="https://arxiv.org/abs/2305.13245" target="_blank" rel="noopener noreferrer">GQA</a> <span class="arrow">·</span> <a href="https://arxiv.org/abs/2104.09864" target="_blank" rel="noopener noreferrer">RoFormer (RoPE)</a></li>
+                <li><a href="https://arxiv.org/abs/2401.04088" target="_blank" rel="noopener noreferrer">Mixtral of Experts</a> <span class="arrow">·</span> <a href="https://arxiv.org/abs/2412.19437" target="_blank" rel="noopener noreferrer">DeepSeek-V3 Technical Report</a></li>
+              </ul>
+            </li>
+            <li class="item">
+              <input type="checkbox" class="ick" id="le-read-2">
+              <label class="irow" for="le-read-2">
+                <span class="box"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg></span>
+                <span class="num">02</span>
+                <span class="ttl">Training &amp; post-training</span>
+              </label>
+              <ul class="sub">
+                <li><a href="https://arxiv.org/abs/1910.02054" target="_blank" rel="noopener noreferrer">ZeRO</a> <span class="arrow">·</span> <a href="https://docs.nvidia.com/megatron-core/developer-guide/latest/user-guide/parallelism-guide.html" target="_blank" rel="noopener noreferrer">Megatron Core parallelism guide</a></li>
+                <li><a href="https://arxiv.org/abs/2203.02155" target="_blank" rel="noopener noreferrer">InstructGPT (RLHF)</a> <span class="arrow">·</span> <a href="https://arxiv.org/abs/2305.18290" target="_blank" rel="noopener noreferrer">DPO</a></li>
+                <li><a href="https://arxiv.org/abs/2106.09685" target="_blank" rel="noopener noreferrer">LoRA</a> <span class="arrow">·</span> <a href="https://arxiv.org/abs/2305.14314" target="_blank" rel="noopener noreferrer">QLoRA</a></li>
+              </ul>
+            </li>
+            <li class="item">
+              <input type="checkbox" class="ick" id="le-read-3">
+              <label class="irow" for="le-read-3">
+                <span class="box"><svg viewBox="0 0 24 24"><path d="M5 12l5 5L19 7"/></svg></span>
+                <span class="num">03</span>
+                <span class="ttl">Inference &amp; serving</span>
+              </label>
+              <ul class="sub">
+                <li><a href="https://arxiv.org/abs/2309.06180" target="_blank" rel="noopener noreferrer">PagedAttention (vLLM)</a> <span class="arrow">·</span> <a href="https://docs.vllm.ai/en/latest/features/automatic_prefix_caching/" target="_blank" rel="noopener noreferrer">vLLM automatic prefix caching</a></li>
+                <li><a href="https://www.usenix.org/conference/osdi22/presentation/yu" target="_blank" rel="noopener noreferrer">Orca (continuous batching)</a> <span class="arrow">·</span> <a href="https://arxiv.org/abs/2403.02310" target="_blank" rel="noopener noreferrer">Sarathi-Serve (chunked prefill)</a></li>
+                <li><a href="https://arxiv.org/abs/2211.17192" target="_blank" rel="noopener noreferrer">Speculative decoding</a> <span class="arrow">·</span> <a href="https://arxiv.org/abs/2401.09670" target="_blank" rel="noopener noreferrer">DistServe (disaggregation)</a></li>
+                <li><a href="https://huggingface.co/docs/transformers/main_classes/text_generation" target="_blank" rel="noopener noreferrer">Transformers generation strategies</a></li>
+              </ul>
+            </li>
+          </ol>
+        </article>
+      </section>
+
       <div class="cta">
         <div>
           <h4>Have feedback?</h4>
@@ -572,7 +1012,7 @@
 <script>
 (function(){
   const KEY = 'guides.ai-roadmap.v1';
-  const tracks = ['non-technical','technical'];
+  const tracks = ['non-technical','technical','llm-expert'];
   const tabs = Array.from(document.querySelectorAll('.seg [role="tab"]'));
   const panels = Object.fromEntries(tracks.map(t => [t, document.getElementById(t)]));
   const toc = document.getElementById('toc');
@@ -656,6 +1096,7 @@
     if (e.target.matches('input,textarea,[contenteditable]')) return;
     if (e.key === '1') setTrack('non-technical');
     if (e.key === '2') setTrack('technical');
+    if (e.key === '3') setTrack('llm-expert');
   });
 
   // hash routing: #technical, #non-technical, or a category id like #t-concepts
