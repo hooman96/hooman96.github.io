@@ -1,5 +1,5 @@
 /** Microscope 01 — Encode / Decode terminology, toy tokenizer, and the Encode → Prefill → Decode walkthrough. */
-import { html, esc, canvas, svg, prefersReducedMotion } from './util.js';
+import { html, esc, canvas, svg, prefersReducedMotion } from '/atlas-core/js/microscopes/util.js';
 
 export const id = 'scope-tokenizer';
 export const short = 'Encode → Decode';

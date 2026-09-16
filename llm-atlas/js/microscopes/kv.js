@@ -1,5 +1,5 @@
 /** Microscope 08 — KV cache calculator and paged block table. */
-import { html, canvas, svg, field, stat, rng } from './util.js';
+import { html, canvas, svg, field, stat, rng } from '/atlas-core/js/microscopes/util.js';
 import { kvBytesPerToken, kvBytesPerSequence, kvBytesTotal, fmtBytes } from '../lib/kvMemory.js';
 
 export const id = 'scope-kv';

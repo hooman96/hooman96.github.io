@@ -4,9 +4,7 @@
  * All colours come from CSS custom properties; this module never sets a colour.
  */
 import { boxFaces, project, polyPoints, bounds, clamp, lerp, deg } from '../lib/geometry.js';
-import { SUBSYSTEM_LAYOUT, BOX, PLATE, computeSlots, plateSize } from '../data/layout.js';
-import { SUBSYSTEMS } from '../data/schema.js';
-import { MODE_PATHS } from '../data/modes.js';
+import { BOX, PLATE, computeSlots, plateSize } from '../lib/layout.js';
 
 const NS = 'http://www.w3.org/2000/svg';
 const el = (tag, attrs = {}, parent) => {
@@ -15,18 +13,18 @@ const el = (tag, attrs = {}, parent) => {
   if (parent) parent.appendChild(n);
   return n;
 };
-const SUB_INDEX = Object.fromEntries(SUBSYSTEMS.map((s, i) => [s.id, i + 1]));
-const SUB_NAME = Object.fromEntries(SUBSYSTEMS.map(s => [s.id, s.name]));
 
 export const DEFAULT_VIEW = { yaw: deg(-32), pitch: deg(34), zoom: 1 };
 const PITCH_MIN = deg(12), PITCH_MAX = deg(72);
 
 /**
  * @param {SVGSVGElement} svg
- * @param {{components:Array, edges:Array, store:any}} opts
+ * @param {{components:Array, edges:Array, store:any, subsystems:Array, manifest:Object, layout:{subsystems:Object, overrides?:Object}, modePaths:Object}} opts
  */
-export function createScene(svg, { components, edges, store }) {
-  const slots = computeSlots();
+export function createScene(svg, { components, edges, store, subsystems: SUBSYSTEMS, manifest, layout, modePaths: MODE_PATHS }) {
+  const SUBSYSTEM_LAYOUT = layout.subsystems;
+  const SUB_INDEX = Object.fromEntries(SUBSYSTEMS.map((s, i) => [s.id, i + 1]));
+  const slots = computeSlots(manifest, SUBSYSTEM_LAYOUT, layout.overrides || {});
   const byId = new Map(components.map(c => [c.id, c]));
   const adjacency = new Map();
   for (const e of edges) {
@@ -47,7 +45,7 @@ export function createScene(svg, { components, edges, store }) {
 
   const plates = {};
   for (const s of SUBSYSTEMS) {
-    const g = el('g', { class: 'plate', 'data-sub': s.id }, gPlates);
+    const g = el('g', { class: 'plate', 'data-sub': s.id, style: `--c:var(--atlas-${s.id})` }, gPlates);
     const poly = el('polygon', { class: 'plate-top' }, g);
     const tag = el('g', { class: 'plate-tag' }, g);
     const tagBg = el('rect', { rx: 2, ry: 2, class: 'plate-tag-bg' }, tag);
@@ -58,7 +56,7 @@ export function createScene(svg, { components, edges, store }) {
 
   const nodes = new Map();
   for (const c of components) {
-    const g = el('g', { class: 'node', 'data-id': c.id, 'data-sub': c.subsystem, role: 'button', tabindex: '-1', 'aria-label': c.name }, gNodes);
+    const g = el('g', { class: 'node', 'data-id': c.id, 'data-sub': c.subsystem, style: `--c:var(--atlas-${c.subsystem})`, role: 'button', tabindex: '-1', 'aria-label': c.name }, gNodes);
     const faces = [el('polygon', { class: 'f' }, g), el('polygon', { class: 'f' }, g), el('polygon', { class: 'f' }, g)];
     const outline = el('polygon', { class: 'outline' }, g);
     const title = el('title', {}, g); title.textContent = c.name;
@@ -72,7 +70,7 @@ export function createScene(svg, { components, edges, store }) {
   const labelEls = new Map();
   const getLabel = id => {
     if (!labelEls.has(id)) {
-      const g = el('g', { class: 'label', 'data-sub': byId.get(id).subsystem }, gLabels);
+      const g = el('g', { class: 'label', 'data-sub': byId.get(id).subsystem, style: `--c:var(--atlas-${byId.get(id).subsystem})` }, gLabels);
       const bg = el('rect', { rx: 3, ry: 3, class: 'label-bg' }, g);
       const tx = el('text', { class: 'label-text' }, g);
       tx.textContent = byId.get(id).name;
@@ -150,7 +148,7 @@ export function createScene(svg, { components, edges, store }) {
     if (!pts.length) return;
     const b = bounds(pts);
     const pad = W < 640 ? 28 : 56;
-    const fit = Math.min((W - pad * 2) / Math.max(b.w, 1), (H - pad * 2 - 30) / Math.max(b.h, 1));
+    const fit = Math.min((W - pad * 2 - (W < 640 ? 20 : 60)) / Math.max(b.w, 1), (H - pad * 2 - 30) / Math.max(b.h, 1));
     const scale = fit * st.zoom;
     const cam = { yaw: st.yaw, pitch: st.pitch, scale, cx: W / 2 - (b.minX + b.w / 2) * scale + st.panX, cy: H / 2 - (b.minY + b.h / 2) * scale + st.panY + 10 };
     scene.cam = cam;
@@ -257,7 +255,6 @@ export function createScene(svg, { components, edges, store }) {
       if (overlaps && !priority) { L.g.style.display = 'none'; continue; }
       placed.push(box);
       L.g.style.display = '';
-      L.g.setAttribute('data-sub', n.c.subsystem);
       L.g.classList.toggle('sel', st.selected === n.c.id);
       L.g.classList.toggle('dim', n.level === 'dim' && !priority);
       L.bg.setAttribute('x', x); L.bg.setAttribute('y', y); L.bg.setAttribute('width', tw); L.bg.setAttribute('height', th);
@@ -274,7 +271,7 @@ export function createScene(svg, { components, edges, store }) {
   svg.addEventListener('pointerdown', ev => {
     if (ev.button !== 0 && ev.pointerType === 'mouse') return;
     drag = { x: ev.clientX, y: ev.clientY, yaw: store.get().yaw, pitch: store.get().pitch, moved: false, id: ev.pointerId, target: ev.target.closest('.node')?.dataset.id || null };
-    svg.setPointerCapture(ev.pointerId);
+    try { svg.setPointerCapture(ev.pointerId); } catch (e) { /* synthetic or already-released pointer */ }
   });
   svg.addEventListener('pointermove', ev => {
     if (drag && drag.id === ev.pointerId) {

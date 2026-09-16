@@ -1,9 +1,4 @@
 /** Right-hand component inspector. Renders one AtlasComponent from the content model. */
-import { SUBSYSTEMS, MODES } from '../data/schema.js';
-import { REFERENCES } from '../data/references.js';
-
-const SUB_NAME = Object.fromEntries(SUBSYSTEMS.map(s => [s.id, s.name]));
-const MODE_LABEL = Object.fromEntries(MODES.map(m => [m.id, m.label]));
 
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 /** Render inline `code` spans from plain text (content strings never contain HTML). */
@@ -12,35 +7,11 @@ export const rich = s => esc(s).replace(/`([^`]+)`/g, '<code>$1</code>');
 const list = items => items && items.length ? `<ul>${items.map(i => `<li>${rich(i)}</li>`).join('')}</ul>` : '';
 const section = (title, body) => body ? `<div class="insp-section"><h4>${title}</h4>${body}</div>` : '';
 
-/** Map from component id to microscope panel id, so the inspector can deep-link. */
-const SCOPE_FOR = {
-  tokenization: 'scope-tokenizer', 'tokenizer-encode': 'scope-tokenizer', 'tokenizer-decode': 'scope-tokenizer', 'tokenizer-training': 'scope-tokenizer',
-  'token-embeddings': 'scope-transformer', rmsnorm: 'scope-transformer', 'q-projection': 'scope-transformer', 'k-projection': 'scope-transformer', 'v-projection': 'scope-transformer',
-  rope: 'scope-transformer', 'causal-attention': 'scope-transformer', 'gqa-mqa': 'scope-transformer', 'flash-attention': 'scope-transformer', 'residual-stream': 'scope-transformer',
-  'dense-mlp': 'scope-transformer', 'final-norm': 'scope-transformer', 'lm-head': 'scope-transformer', 'vocabulary-logits': 'scope-decoding',
-  'moe-replacement': 'scope-moe', 'router-projection': 'scope-moe', 'router-logits': 'scope-moe', 'top-k-selection': 'scope-moe', 'token-permutation': 'scope-moe',
-  'expert-dispatch': 'scope-moe', 'all-to-all': 'scope-moe', 'expert-mlps': 'scope-moe', 'shared-experts': 'scope-moe', 'weighted-combine': 'scope-moe', unpermutation: 'scope-moe',
-  'load-balancing': 'scope-moe', 'expert-parallelism': 'scope-parallelism', 'expert-placement': 'scope-moe', 'hot-expert-replication': 'scope-moe',
-  'cross-entropy': 'scope-training', 'forward-pass': 'scope-training', autograd: 'scope-training', 'backward-pass': 'scope-training', 'gradient-buffers': 'scope-training',
-  'gradient-accumulation': 'scope-training', 'gradient-clipping': 'scope-training', adamw: 'scope-training', 'optimizer-moments': 'scope-training', 'lr-scheduler': 'scope-training',
-  'mixed-precision': 'scope-training', 'activation-checkpointing': 'scope-training', 'checkpoint-saving': 'scope-training',
-  'distributed-collectives': 'scope-parallelism', 'data-parallel': 'scope-parallelism', 'tensor-parallel': 'scope-parallelism', 'pipeline-parallel': 'scope-parallelism',
-  'context-parallel': 'scope-parallelism', 'fsdp-zero': 'scope-parallelism', 'tp-inference': 'scope-parallelism', 'pp-inference': 'scope-parallelism', 'ep-inference': 'scope-parallelism',
-  'instruction-dataset': 'scope-posttraining', 'annotation-taxonomy': 'scope-posttraining', annotators: 'scope-posttraining', rubrics: 'scope-posttraining', 'annotator-calibration': 'scope-posttraining',
-  'chat-template': 'scope-posttraining', sft: 'scope-posttraining', 'loss-masking': 'scope-posttraining', 'full-fine-tuning': 'scope-posttraining', lora: 'scope-posttraining', qlora: 'scope-posttraining',
-  'preference-pairs': 'scope-posttraining', 'reward-modeling': 'scope-posttraining', 'rlhf-ppo': 'scope-posttraining', dpo: 'scope-posttraining', 'safety-tuning': 'scope-posttraining',
-  'red-teaming': 'scope-posttraining', evaluation: 'scope-posttraining', 'multi-lora-serving': 'scope-serving',
-  'prefix-cache-lookup': 'scope-prefix', 'kv-cache': 'scope-kv', 'kv-allocation': 'scope-kv', 'paged-kv-cache': 'scope-kv', 'quantized-kv-cache': 'scope-kv', 'kv-offloading': 'scope-kv',
-  prefill: 'scope-batching', 'chunked-prefill': 'scope-batching', 'continuous-batching': 'scope-batching', 'decode-loop': 'scope-batching', 'request-queue': 'scope-batching', 'admission-control': 'scope-batching',
-  'logit-processors': 'scope-decoding', sampling: 'scope-decoding', 'speculative-decoding': 'scope-decoding', 'draft-models': 'scope-decoding', 'prompt-lookup': 'scope-decoding', 'multi-token-prediction': 'scope-decoding',
-  'quantized-weights': 'scope-quant', 'api-gateway': 'scope-serving', 'model-routing': 'scope-serving', 'disaggregated-serving': 'scope-serving', autoscaling: 'scope-serving',
-  'canary-releases': 'scope-serving', backpressure: 'scope-serving', telemetry: 'scope-serving', 'latency-metrics': 'scope-serving', 'api-request': 'scope-tokenizer', 'streaming-response': 'scope-tokenizer',
-  'cuda-graphs': 'scope-serving', 'kernel-compilation': 'scope-serving',
-};
-
-export function createInspector(root, { byId, store }) {
+export function createInspector(root, { byId, store, subsystems, modes, references: REFERENCES, scopeFor: SCOPE_FOR = {} }) {
+  const SUB_NAME = Object.fromEntries(subsystems.map(s => [s.id, s.name]));
+  const MODE_LABEL = Object.fromEntries(modes.map(m => [m.id, m.label]));
   function renderEmpty() {
-    root.removeAttribute('data-sub');
+    root.removeAttribute('data-sub'); root.style.removeProperty('--c');
     root.innerHTML = `
       <div class="insp-empty">
         <h3>Inspector</h3>
@@ -57,6 +28,7 @@ export function createInspector(root, { byId, store }) {
     const c = byId.get(id);
     if (!c) return renderEmpty();
     root.setAttribute('data-sub', c.subsystem);
+    root.style.setProperty('--c', `var(--atlas-${c.subsystem})`);
     const refs = (c.references || []).map(r => REFERENCES[r]).filter(Boolean);
     const scope = SCOPE_FOR[c.id];
     root.innerHTML = `

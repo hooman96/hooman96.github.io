@@ -1,5 +1,5 @@
 /** Microscope 03 — MoE router simulator: 8 experts, a small batch, top-2 routing, load per expert, imbalance. */
-import { html, canvas, svg, rng, stat, flowStrip } from './util.js';
+import { html, canvas, svg, rng, stat, flowStrip } from '/atlas-core/js/microscopes/util.js';
 
 export const id = 'scope-moe';
 export const short = 'MoE router';

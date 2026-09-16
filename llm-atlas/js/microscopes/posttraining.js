@@ -1,5 +1,5 @@
 /** Microscope 06 — SFT / annotation pipeline, LoRA / QLoRA, preference post-training branches. */
-import { html, canvas, svg, field, stat, fmt } from './util.js';
+import { html, canvas, svg, field, stat, fmt } from '/atlas-core/js/microscopes/util.js';
 
 export const id = 'scope-posttraining';
 export const short = 'SFT · LoRA · DPO';

@@ -1,0 +1,21 @@
+/* LLM Atlas: subsystem hue tokens (dark + light) and microscope subsystem classes. Shared styles live in /atlas-core/atlas.css. */
+:root{
+  --atlas-data:#22b8b0;
+  --atlas-model:#3d8ff7;
+  --atlas-moe:#a488ff;
+  --atlas-training:#e0b13a;
+  --atlas-posttraining:#ec7a95;
+  --atlas-runtime:#4fd07a;
+  --atlas-serving:#f0884b;
+}
+:root[data-theme="light"]{
+  --atlas-data:#0f8f88;
+  --atlas-model:#0a6fd6;
+  --atlas-moe:#6a4fd8;
+  --atlas-training:#a87a12;
+  --atlas-posttraining:#c2405f;
+  --atlas-runtime:#1f9d55;
+  --atlas-serving:#cf5d1c;
+}
+.vis .sub-data{--c:var(--atlas-data);} .vis .sub-model{--c:var(--atlas-model);} .vis .sub-moe{--c:var(--atlas-moe);}
+.vis .sub-training{--c:var(--atlas-training);} .vis .sub-posttraining{--c:var(--atlas-posttraining);} .vis .sub-runtime{--c:var(--atlas-runtime);} .vis .sub-serving{--c:var(--atlas-serving);}

@@ -1,5 +1,5 @@
 /** Microscope 11 — quantization / weight-memory calculator. */
-import { html, field, stat } from './util.js';
+import { html, field, stat } from '/atlas-core/js/microscopes/util.js';
 import { weightBytes, fmtBytes } from '../lib/kvMemory.js';
 
 export const id = 'scope-quant';

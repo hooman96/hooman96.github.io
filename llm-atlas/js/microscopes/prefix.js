@@ -1,5 +1,5 @@
 /** Microscope 07 — block-based prefix cache simulator. */
-import { html, canvas, svg, field, stat, pct } from './util.js';
+import { html, canvas, svg, field, stat, pct } from '/atlas-core/js/microscopes/util.js';
 
 export const id = 'scope-prefix';
 export const short = 'Prefix cache';

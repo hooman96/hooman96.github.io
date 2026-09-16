@@ -1,5 +1,5 @@
 /** Microscope 09 — prefill vs decode shapes, chunked prefill, and static / dynamic / continuous batching. */
-import { html, canvas, svg, stat, rng, prefersReducedMotion } from './util.js';
+import { html, canvas, svg, stat, rng, prefersReducedMotion } from '/atlas-core/js/microscopes/util.js';
 
 export const id = 'scope-batching';
 export const short = 'Batching';

@@ -1,5 +1,5 @@
 /** Microscope 02 — one decoder block (Dense vs MoE), attention head layouts, FlashAttention IO diagram. */
-import { html, canvas, svg } from './util.js';
+import { html, canvas, svg } from '/atlas-core/js/microscopes/util.js';
 
 export const id = 'scope-transformer';
 export const short = 'Decoder block';

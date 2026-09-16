@@ -1,5 +1,5 @@
 /** Microscope 10 — decoding policies from one logits vector, and a speculative-decoding acceptance visualizer. */
-import { html, canvas, svg, field, stat, rng, pct } from './util.js';
+import { html, canvas, svg, field, stat, rng, pct } from '/atlas-core/js/microscopes/util.js';
 
 export const id = 'scope-decoding';
 export const short = 'Decoding · speculative';

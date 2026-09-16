@@ -1,0 +1,24 @@
+/* Stack Atlas: subsystem hue tokens (dark + light) and microscope subsystem classes. Shared styles live in /atlas-core/atlas.css. */
+:root{
+  --atlas-app:#ec7a95;
+  --atlas-runtime:#a488ff;
+  --atlas-kernel:#3d8ff7;
+  --atlas-virt:#22b8b0;
+  --atlas-cpu:#e0b13a;
+  --atlas-gpu:#4fd07a;
+  --atlas-kernels:#f0884b;
+  --atlas-io:#9aa7c2;
+}
+:root[data-theme="light"]{
+  --atlas-app:#c2405f;
+  --atlas-runtime:#6a4fd8;
+  --atlas-kernel:#0a6fd6;
+  --atlas-virt:#0f8f88;
+  --atlas-cpu:#a87a12;
+  --atlas-gpu:#1f9d55;
+  --atlas-kernels:#cf5d1c;
+  --atlas-io:#5a6785;
+}
+.vis .sub-app{--c:var(--atlas-app);} .vis .sub-runtime{--c:var(--atlas-runtime);} .vis .sub-kernel{--c:var(--atlas-kernel);} .vis .sub-virt{--c:var(--atlas-virt);}
+.vis .sub-cpu{--c:var(--atlas-cpu);} .vis .sub-gpu{--c:var(--atlas-gpu);} .vis .sub-kernels{--c:var(--atlas-kernels);} .vis .sub-io{--c:var(--atlas-io);}
+.vis .cpu-lane{fill:var(--atlas-cpu);} .vis .gpu-lane{fill:var(--atlas-gpu);} .vis .launch{fill:var(--atlas-runtime);} .vis .gap{fill:var(--atlas-border);}

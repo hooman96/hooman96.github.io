@@ -1,12 +1,10 @@
 /** Left-hand controls: mode segment, search, explode, subsystem toggles, isolate/flow/reset, labels, keyboard list. */
-import { SUBSYSTEMS, MODES } from '../data/schema.js';
-import { MANIFEST } from '../data/manifest.js';
 import { buildIndex, search } from '../lib/search.js';
 import { DEFAULT_VIEW } from './scene.js';
 
 const esc = s => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 
-export function createControls({ components, byId, store, scene }) {
+export function createControls({ components, byId, store, scene, subsystems: SUBSYSTEMS, modes: MODES, manifest: MANIFEST, titleBase, titleSuffix }) {
   const $ = id => document.getElementById(id);
   const index = buildIndex(components);
 
@@ -55,7 +53,7 @@ export function createControls({ components, byId, store, scene }) {
 
   // ---- subsystem toggles + legend ----
   const toggles = $('sub-toggles');
-  toggles.innerHTML = SUBSYSTEMS.map(s => `<li><button type="button" data-sub="${s.id}" aria-pressed="true" title="${esc(s.blurb)}"><i aria-hidden="true"></i>${esc(s.name)}<span class="n">${MANIFEST[s.id].length}</span></button></li>`).join('');
+  toggles.innerHTML = SUBSYSTEMS.map(s => `<li><button type="button" data-sub="${s.id}" style="--c:var(--atlas-${s.id})" aria-pressed="true" title="${esc(s.blurb)}"><i aria-hidden="true"></i>${esc(s.name)}<span class="n">${MANIFEST[s.id].length}</span></button></li>`).join('');
   toggles.addEventListener('click', ev => {
     const b = ev.target.closest('[data-sub]'); if (!b) return;
     const vis = { ...store.get().visible }; vis[b.dataset.sub] = !vis[b.dataset.sub]; store.set({ visible: vis });
@@ -78,7 +76,7 @@ export function createControls({ components, byId, store, scene }) {
 
   // ---- keyboard component list ----
   const list = $('component-list');
-  list.innerHTML = SUBSYSTEMS.map(s => `<div data-sub="${s.id}"><h4>${esc(s.name)}</h4>${MANIFEST[s.id].map(([id, name]) => `<button type="button" data-id="${id}" aria-pressed="false">${esc(name)}</button>`).join('')}</div>`).join('');
+  list.innerHTML = SUBSYSTEMS.map(s => `<div data-sub="${s.id}" style="--c:var(--atlas-${s.id})"><h4>${esc(s.name)}</h4>${MANIFEST[s.id].map(([id, name]) => `<button type="button" data-id="${id}" aria-pressed="false">${esc(name)}</button>`).join('')}</div>`).join('');
   list.addEventListener('click', ev => { const b = ev.target.closest('[data-id]'); if (b) store.set({ selected: b.dataset.id, matches: null }); });
 
   // ---- global shortcuts ----
@@ -97,7 +95,7 @@ export function createControls({ components, byId, store, scene }) {
       seg.querySelectorAll('[data-mode]').forEach(b => b.setAttribute('aria-pressed', b.dataset.mode === st.mode ? 'true' : 'false'));
       const m = MODES.find(x => x.id === st.mode);
       $('mode-title').textContent = m.title; $('mode-lead').textContent = m.lead;
-      document.title = (st.mode === 'system' ? 'LLM Atlas' : `LLM Atlas · ${m.label}`) + ' — Interactive LLM Systems Explorer | Hooman Mohammadi';
+      document.title = (st.mode === 'system' ? titleBase : `${titleBase} · ${m.label}`) + titleSuffix;
     }
     if (changed.includes('explode')) { explode.value = Math.round(st.explode * 100); explodeOut.value = explodeOut.textContent = Math.round(st.explode * 100) + '%'; }
     if (changed.includes('visible')) toggles.querySelectorAll('[data-sub]').forEach(b => b.setAttribute('aria-pressed', st.visible[b.dataset.sub] ? 'true' : 'false'));

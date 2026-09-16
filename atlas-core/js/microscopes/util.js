@@ -36,8 +36,9 @@ export function field({ id, label, type = 'number', value, min, max, step, optio
     input = document.createElement('select');
     for (const [v, t] of options) { const o = document.createElement('option'); o.value = v; o.textContent = t; if (String(v) === String(value)) o.selected = true; input.appendChild(o); }
   } else {
-    input = document.createElement('input'); input.type = type; input.value = value;
+    input = document.createElement('input'); input.type = type;
     if (min !== undefined) input.min = min; if (max !== undefined) input.max = max; if (step !== undefined) input.step = step;
+    input.value = value;
   }
   input.id = id;
   wrap.appendChild(lab); wrap.appendChild(input);
@@ -45,7 +46,7 @@ export function field({ id, label, type = 'number', value, min, max, step, optio
   return { el: wrap, input };
 }
 
-export const stat = (label, value, cls = '') => `<div class="stat ${cls}"><b>${value}</b><span>${label}</span></div>`;
+export const stat = (label, value, cls = '') => `<div class="stat ${cls}"><b${String(value).length > 9 ? ' class="sm"' : ''}>${value}</b><span>${label}</span></div>`;
 export const prefersReducedMotion = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
 /** Seeded PRNG (mulberry32) so simulations are reproducible per "batch". */

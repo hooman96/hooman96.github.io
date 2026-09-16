@@ -1,5 +1,5 @@
 /** Microscope 05 — 8-GPU distributed parallelism explorer: DP, TP, PP, CP, EP, FSDP/ZeRO. */
-import { html, canvas, svg } from './util.js';
+import { html, canvas, svg } from '/atlas-core/js/microscopes/util.js';
 
 export const id = 'scope-parallelism';
 export const short = 'Parallelism';

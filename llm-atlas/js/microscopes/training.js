@@ -1,5 +1,5 @@
 /** Microscope 04 — one pre-training step, with the glossary a practitioner needs. */
-import { html, field, stat, fmt, flowStrip } from './util.js';
+import { html, field, stat, fmt, flowStrip } from '/atlas-core/js/microscopes/util.js';
 
 export const id = 'scope-training';
 export const short = 'Training step';

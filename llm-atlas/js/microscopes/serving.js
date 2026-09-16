@@ -1,5 +1,5 @@
 /** Microscope 12 — serving plane, disaggregated prefill/decode, and the metrics glossary. */
-import { html, canvas, svg, flowStrip } from './util.js';
+import { html, canvas, svg, flowStrip } from '/atlas-core/js/microscopes/util.js';
 
 export const id = 'scope-serving';
 export const short = 'Serving · metrics';
