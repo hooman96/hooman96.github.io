@@ -1080,6 +1080,8 @@
     if (!panels[t]) return;
     active = t;
     tabs.forEach(b => b.setAttribute('aria-selected', b.dataset.track === t ? 'true' : 'false'));
+    const activeTab = tabs.find(b => b.dataset.track === t);
+    if (activeTab && activeTab.scrollIntoView) activeTab.scrollIntoView({ block: 'nearest', inline: 'nearest' });
     tracks.forEach(k => { panels[k].classList.toggle('on', k === t); panels[k].hidden = k !== t; });
     buildToc(); updateProgress();
     if (!opts.keepHash) history.replaceState(null, '', '#' + t);
