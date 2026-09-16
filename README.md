@@ -94,6 +94,11 @@ Highly motivated and experienced software engineer with a strong background in m
 **Projects**
 ------------
 
+### LLM Atlas (2026)
+
+* Interactive systems atlas of how foundation models are built, adapted and served: https://hooistheman.vercel.app/llm-atlas
+* Exploded, rotatable SVG model of the whole stack with lifecycle modes, search, a component inspector (114 components) and twelve browser-side microscope simulations (prefix cache, MoE router, KV calculator, parallelism, continuous batching, speculative decoding, quantization). Source lives in `llm-atlas/`; no build step or dependencies.
+
 ### WLAN (2016)
 
 * Parallel M/M/1 queue server simulation of carrier sense multiple access collision avoidance.

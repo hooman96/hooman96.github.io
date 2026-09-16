@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="An interactive systems atlas of modern large language models—from datasets, tokenization and Transformer internals to MoE routing, post-training, KV caches, continuous batching and production inference.">
+<meta name="author" content="Hooman Mohammadi">
+<meta name="theme-color" content="#05070f">
+<meta name="color-scheme" content="dark light">
+<link rel="canonical" href="https://hooistheman.vercel.app/llm-atlas">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="LLM Atlas — Interactive LLM Systems Explorer | Hooman Mohammadi">
+<meta property="og:description" content="An interactive systems atlas of modern large language models—from datasets, tokenization and Transformer internals to MoE routing, post-training, KV caches, continuous batching and production inference.">
+<meta property="og:url" content="https://hooistheman.vercel.app/llm-atlas">
+<meta property="og:site_name" content="Hooman Mohammadi">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LLM Atlas — Interactive LLM Systems Explorer | Hooman Mohammadi">
+<meta name="twitter:description" content="An interactive systems atlas of modern large language models—from datasets, tokenization and Transformer internals to MoE routing, post-training, KV caches, continuous batching and production inference.">
+
+<title>LLM Atlas — Interactive LLM Systems Explorer | Hooman Mohammadi</title>
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230081FB'/%3E%3Ctext x='50' y='68' font-family='sans-serif' font-size='60' font-weight='800' text-anchor='middle' fill='white'%3Eh%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/llm-atlas/atlas.css">
+<link rel="modulepreload" href="/llm-atlas/js/main.js">
+<link rel="modulepreload" href="/llm-atlas/js/data/components.js">
+<link rel="modulepreload" href="/llm-atlas/js/data/components/data.js">
+<link rel="modulepreload" href="/llm-atlas/js/data/components/model.js">
+<link rel="modulepreload" href="/llm-atlas/js/data/components/moe.js">
+<link rel="modulepreload" href="/llm-atlas/js/data/components/training.js">
+<link rel="modulepreload" href="/llm-atlas/js/data/components/posttraining.js">
+<link rel="modulepreload" href="/llm-atlas/js/data/components/runtime.js">
+<link rel="modulepreload" href="/llm-atlas/js/data/components/serving.js">
+<script>
+  // Apply a stored theme before first paint to avoid a flash. Dark is the site default.
+  try { var t = localStorage.getItem('llm-atlas.theme'); if (t === 'light') document.documentElement.setAttribute('data-theme', 'light'); } catch (e) {}
+</script>
+</head>
+<body>
+
+<a href="#main" class="skip">Skip to content</a>
+
+<nav id="nav" aria-label="Primary">
+  <a href="/" class="logo" aria-label="Home">hooistheman<span>.</span></a>
+  <ul class="navl">
+    <li><a href="/">Home</a></li>
+    <li><a href="/llm-atlas" aria-current="page">LLM Atlas</a></li>
+    <li class="hm"><a href="/guides/">Guides</a></li>
+    <li class="hm"><a href="/#projects">Projects</a></li>
+    <li class="hm"><a href="/#contact">Contact</a></li>
+  </ul>
+  <button type="button" class="theme-btn" id="theme-btn" aria-pressed="false" aria-label="Switch to light theme" title="Toggle light / dark theme">
+    <svg class="ic-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    <svg class="ic-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+  </button>
+</nav>
+
+<header class="ph">
+  <div class="hgrid" aria-hidden="true"></div>
+  <div class="wrap">
+    <p class="crumb"><a href="/">Home</a> <i>/</i> Atlas</p>
+    <h1 class="ptitle">LLM <span class="ac">Atlas</span></h1>
+    <p class="psub">An interactive map of how foundation models are built, adapted and served.</p>
+    <p class="plead">Explore the system from raw training data to the next generated token. Isolate subsystems, explode the architecture and inspect the mechanics behind Transformer layers, MoE routing, distributed training, post-training and high-throughput inference.</p>
+    <p class="pnote">Built as a living systems map. Architecture details vary across model families and inference engines.</p>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ================= MODE BAR ================= -->
+  <div class="mode-bar" id="mode-bar">
+    <div class="mode-in">
+      <div class="seg" role="group" aria-label="Lifecycle mode" id="mode-seg"></div>
+      <div class="mode-hint" aria-hidden="true"><kbd>1</kbd>–<kbd>6</kbd> modes · <kbd>/</kbd> search · <kbd>Esc</kbd> clear</div>
+    </div>
+  </div>
+
+  <!-- ================= ATLAS ================= -->
+  <section class="atlas" aria-label="Interactive atlas">
+
+    <aside class="controls" id="controls" aria-label="Atlas controls">
+      <details class="ctl-mobile" id="ctl-details" open>
+        <summary>Filters &amp; controls</summary>
+        <div class="ctl-body">
+          <div class="ctl-group">
+            <label class="ctl-label" for="search">Search</label>
+            <div class="search-wrap">
+              <input type="search" id="search" placeholder="KV, RoPE, ZeRO, prefix, MoE…" autocomplete="off" aria-controls="search-results" aria-expanded="false" role="combobox" aria-autocomplete="list">
+              <ul id="search-results" class="search-results" role="listbox" aria-label="Search results"></ul>
+            </div>
+            <p class="ctl-help" id="search-help">One match selects it. Several matches are emphasized in the atlas.</p>
+          </div>
+
+          <div class="ctl-group">
+            <label class="ctl-label" for="explode">Explode <output for="explode" id="explode-out">0%</output></label>
+            <input type="range" id="explode" min="0" max="100" value="0" aria-describedby="explode-help">
+            <p class="ctl-help" id="explode-help">Separates subsystems while keeping their topology and connections.</p>
+          </div>
+
+          <div class="ctl-group">
+            <span class="ctl-label" id="sub-label">Subsystems</span>
+            <ul class="sub-toggles" id="sub-toggles" aria-labelledby="sub-label"></ul>
+          </div>
+
+          <div class="ctl-group ctl-row">
+            <button type="button" class="btn" id="isolate-btn" aria-pressed="false" disabled>Isolate selected</button>
+            <button type="button" class="btn" id="flow-btn" aria-pressed="true">Lifecycle flow</button>
+            <button type="button" class="btn" id="reset-btn">Reset</button>
+          </div>
+
+          <div class="ctl-group">
+            <span class="ctl-label" id="labels-label">Labels</span>
+            <div class="seg small" role="group" aria-labelledby="labels-label" id="labels-seg">
+              <button type="button" data-labels="focus" aria-pressed="true">Focus</button>
+              <button type="button" data-labels="all" aria-pressed="false">All</button>
+              <button type="button" data-labels="none" aria-pressed="false">None</button>
+            </div>
+          </div>
+
+          <div class="ctl-group">
+            <details class="list-details">
+              <summary>Component list (keyboard)</summary>
+              <div id="component-list" class="component-list"></div>
+            </details>
+          </div>
+        </div>
+      </details>
+    </aside>
+
+    <div class="viewer-col">
+      <div class="viewer" id="viewer" tabindex="0" role="application" aria-label="Exploded 3D atlas of an LLM system. Drag to rotate. Arrow keys rotate, plus and minus zoom, Escape clears selection. Use the component list for keyboard selection." aria-describedby="viewer-desc">
+        <p id="viewer-desc" class="sr-only">Seven subsystems are shown as plates carrying labelled components: data plane, model core, MoE subsystem, training, post-training, inference runtime and serving plane. Selecting a component opens its inspector.</p>
+        <div class="viewer-caption" aria-live="polite">
+          <p class="mode-title" id="mode-title"></p>
+          <p class="mode-lead" id="mode-lead"></p>
+        </div>
+        <svg id="scene" class="scene" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"></svg>
+        <div class="viewer-tools" role="group" aria-label="View">
+          <button type="button" class="tool" id="zoom-in" aria-label="Zoom in" title="Zoom in (+)">+</button>
+          <button type="button" class="tool" id="zoom-out" aria-label="Zoom out" title="Zoom out (−)">−</button>
+          <button type="button" class="tool" id="view-reset" aria-label="Reset view" title="Reset view">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/></svg>
+          </button>
+        </div>
+        <div class="viewer-legend" aria-hidden="true" id="legend"></div>
+        <p class="viewer-hint" aria-hidden="true">drag to rotate · ⌘/ctrl + wheel to zoom · click to inspect</p>
+      </div>
+    </div>
+
+    <aside class="inspector" id="inspector" aria-label="Component inspector" aria-live="polite"></aside>
+  </section>
+
+  <!-- ================= MICROSCOPES ================= -->
+  <section class="scopes" aria-labelledby="scopes-title">
+    <div class="wrap">
+      <p class="slabel">Microscope</p>
+      <h2 class="stitle" id="scopes-title">Implementation-level views</h2>
+      <p class="sintro">Each panel is a working simulation, not a screenshot. They run entirely in your browser.</p>
+      <nav class="scope-nav" aria-label="Microscope panels" id="scope-nav"></nav>
+    </div>
+    <div class="wrap scope-list" id="scope-list"></div>
+  </section>
+
+  <!-- ================= PHASES ================= -->
+  <section class="phases" aria-labelledby="phases-title">
+    <div class="wrap">
+      <p class="slabel">Overview</p>
+      <h2 class="stitle" id="phases-title">Three phases, one system</h2>
+      <div class="phase-grid">
+        <article class="phase"><span class="phase-n">01</span><h3>Build</h3><p>Data → tokenization → architecture → distributed pre-training.</p><button type="button" class="link-btn" data-mode="pretraining">Open pre-training mode</button></article>
+        <article class="phase"><span class="phase-n">02</span><h3>Adapt</h3><p>SFT → LoRA → preference optimization → evaluation.</p><button type="button" class="link-btn" data-mode="posttraining">Open post-training mode</button></article>
+        <article class="phase"><span class="phase-n">03</span><h3>Run</h3><p>Prefill → KV state → scheduling → decoding → serving.</p><button type="button" class="link-btn" data-mode="inference">Open inference mode</button></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= REFERENCES ================= -->
+  <section class="refs" aria-labelledby="refs-title">
+    <div class="wrap">
+      <p class="slabel">Sources</p>
+      <h2 class="stitle" id="refs-title">Sources &amp; further reading</h2>
+      <p class="sintro">Primary papers and official documentation used for the technical facts in this atlas. Components cite them individually in the inspector.</p>
+      <ol class="ref-list" id="ref-list"></ol>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p class="ftc"><a href="/">Hooman Mohammadi</a> · LLM Atlas</p>
+  <p class="ftn">Living systems map · <span>Sep 2026</span></p>
+</footer>
+
+<noscript><div class="noscript">The LLM Atlas is an interactive instrument and needs JavaScript. The sources list above still works without it.</div></noscript>
+<script type="module" src="/llm-atlas/js/main.js"></script>
+</body>
+</html>
