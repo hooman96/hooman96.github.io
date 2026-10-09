@@ -1,0 +1,10 @@
+{
+  "rewrites": [
+    { "source": "/hr", "destination": "https://hr-form-five.vercel.app/hr" },
+    { "source": "/hr/:path*", "destination": "https://hr-form-five.vercel.app/hr/:path*" },
+    {
+      "source": "/149e9513-01fa-4fb0-aad4-566afd725d1b/:path*",
+      "destination": "https://hr-form-five.vercel.app/149e9513-01fa-4fb0-aad4-566afd725d1b/:path*"
+    }
+  ]
+}
